@@ -1,0 +1,1097 @@
+stack_technique:
+
+  weweb:
+
+    keep:
+      - breaking change
+      - dépréciation d'une fonctionnalité utilisée
+      - changement tarifaire
+      - limitation de plan
+      - nouvelle contrainte de production
+      - changement de politique produit
+      - migration obligatoire
+      - remplacement possible d'un plugin tiers
+      - nouvelle intégration directement exploitable dans ArchiFact
+      - nouvelle intégration directement exploitable dans SiteNote
+      - gain significatif de productivité développement
+      - réduction de dette technique
+
+    ignore:
+      - tout le reste
+      - posts marketing
+      - témoignages clients
+      - success stories
+      - webinaires
+      - événements
+      - annonces RH
+      - tutoriels débutants
+      - cas d'usage génériques
+      - nouveaux composants UI sans impact direct
+      - améliorations mineures de l'éditeur
+      - corrections mineures
+      - changements visuels mineurs
+      - annonces déjà reçues par email sans action possible
+
+    agir_triggers:
+      - risque de casse sur ArchiFact
+      - risque de casse sur SiteNote
+      - migration obligatoire
+      - économie de coût
+      - économie de temps supérieure à 2 heures par mois
+      - suppression ou remplacement d'un plugin
+      - réduction de dette technique
+      - amélioration majeure de sécurité
+      - amélioration majeure de performance
+      - amélioration UX majeure pour ArchiFact
+      - amélioration UX majeure pour SiteNote
+      - fonctionnalité pouvant accélérer la commercialisation
+      - changement tarifaire significatif
+      - limitation de plan impactant la production
+
+  supabase:
+
+    keep:
+      - breaking change
+      - dépréciation d'une fonctionnalité utilisée
+      - migration obligatoire
+      - changement Data API
+      - changement RLS
+      - changement Auth
+      - changement Storage
+      - changement Edge Functions
+      - changement PostgreSQL managé
+      - changement de sécurité
+      - nouvelle contrainte de permissions
+      - évolution des quotas
+      - limitation de plan
+      - changement tarifaire
+      - nouvelle fonctionnalité réduisant la complexité backend
+      - nouvelle fonctionnalité utile à ArchiFact
+      - nouvelle fonctionnalité utile à SiteNote
+
+    ignore:
+      - tout le reste
+      - posts marketing
+      - témoignages clients
+      - success stories
+      - événements
+      - webinaires
+      - annonces RH
+      - tutoriels débutants
+      - cas d'usage génériques
+      - nouveautés sans impact sur mes projets
+      - corrections mineures
+      - améliorations mineures de dashboard
+      - annonces déjà reçues par email sans action possible
+
+    agir_triggers:
+      - risque de casse sur ArchiFact
+      - risque de casse sur SiteNote
+      - migration obligatoire
+      - risque sécurité
+      - amélioration majeure de sécurité
+      - amélioration majeure de performance
+      - impact RLS
+      - impact Auth
+      - impact Storage
+      - impact Edge Functions
+      - impact Data API
+      - impact production
+      - économie de coût
+      - réduction dette technique
+      - simplification backend significative
+      - gain de performance visible pour l'utilisateur
+      - limitation de plan impactant la production
+      - changement tarifaire significatif
+
+  stripe:
+
+    keep:
+      - breaking change
+      - dépréciation d'API utilisée
+      - changement Checkout
+      - changement Billing
+      - changement Subscription
+      - changement Webhook
+      - changement Tax
+      - évolution facturation électronique
+      - évolution réglementation Europe
+      - changement tarifaire
+      - nouvelle fonctionnalité utile à ArchiFact
+      - nouvelle fonctionnalité utile à SiteNote
+      - amélioration sécurité paiements
+      - nouvelle contrainte de conformité
+
+    ignore:
+      - tout le reste
+      - posts marketing
+      - témoignages clients
+      - success stories
+      - événements
+      - webinaires
+      - annonces RH
+      - cas d'usage génériques
+      - tutoriels débutants
+      - nouvelles méthodes de paiement non pertinentes
+      - annonces déjà reçues par email sans action possible
+
+    agir_triggers:
+      - risque de casse sur les abonnements
+      - risque de casse sur les paiements
+      - changement réglementaire
+      - impact facturation électronique
+      - impact revenus SaaS
+      - impact renouvellement abonnements
+      - impact TVA
+      - migration obligatoire
+      - économie de coût
+      - amélioration conversion clients
+      - amélioration sécurité paiement
+
+  resend:
+
+    keep:
+      - breaking change
+      - dépréciation d'API utilisée
+      - changement de délivrabilité
+      - changement SMTP
+      - changement DNS
+      - changement authentification email
+      - changement tarifaire
+      - évolution des quotas
+      - limitation de plan
+      - nouvelle fonctionnalité utile à ArchiFact
+      - nouvelle fonctionnalité utile à SiteNote
+      - amélioration majeure de sécurité
+
+    ignore:
+      - tout le reste
+      - posts marketing
+      - témoignages clients
+      - success stories
+      - événements
+      - webinaires
+      - annonces RH
+      - tutoriels débutants
+      - cas d'usage génériques
+      - annonces déjà reçues par email sans action possible
+
+    agir_triggers:
+      - risque de non délivrance des emails
+      - risque de casse sur les emails transactionnels
+      - changement DNS obligatoire
+      - changement authentification obligatoire
+      - migration obligatoire
+      - changement tarifaire significatif
+      - économie de coût
+      - amélioration significative de la délivrabilité
+      - amélioration significative de la sécurité
+
+
+sitenote:
+
+    terrain:
+
+        keep:
+          - réduction du nombre de clics
+          - réduction de saisie manuelle
+          - saisie terrain plus rapide
+          - capture photo améliorée
+          - annotation photo améliorée
+          - annotation plan améliorée
+          - dictée vocale exploitable
+          - transcription vocale exploitable
+          - mode hors ligne réellement utilisable
+          - synchronisation terrain simplifiée
+          - amélioration ergonomie mobile
+          - amélioration ergonomie tablette
+          - automatisation de saisie terrain
+          - géolocalisation utile sur chantier
+          - reconnaissance automatique d'informations terrain
+
+        ignore:
+          - tout le reste
+          - gadgets chantier
+          - objets connectés sans usage concret
+          - démonstrations marketing
+          - applications généralistes
+          - innovations sans gain de productivité mesurable
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - réduction du nombre de clics
+          - réduction de saisie manuelle
+          - gain supérieur à 5 minutes par visite chantier
+          - amélioration significative UX mobile
+          - amélioration significative UX tablette
+          - automatisation d'une tâche terrain récurrente
+          - amélioration qualité des données collectées
+          - réduction risque d'oubli
+          - amélioration vitesse de saisie
+          - avantage concurrentiel identifiable
+
+    comptes_rendus:
+
+        keep:
+          - génération automatique de comptes rendus
+          - amélioration génération PDF
+          - automatisation de mise en page
+          - automatisation diffusion des comptes rendus
+          - extraction automatique des remarques
+          - classement automatique des remarques
+          - catégorisation automatique des remarques
+          - synthèse automatique des réunions
+          - transcription automatique des réunions
+          - génération automatique des actions à suivre
+          - amélioration qualité documentaire
+          - automatisation des relances
+
+        ignore:
+          - tout le reste
+          - modèles de comptes rendus génériques
+          - outils bureautiques généralistes
+          - démonstrations marketing
+          - solutions sans application chantier
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - réduction du temps de rédaction
+          - réduction du temps de mise en page
+          - réduction du temps d'envoi
+          - automatisation d'une étape manuelle
+          - amélioration qualité du document final
+          - réduction risque d'oubli
+          - amélioration traçabilité
+          - amélioration expérience utilisateur
+          - gain potentiel supérieur à 5 heures par mois
+          - avantage concurrentiel identifiable
+
+    opr_reserves:
+
+        keep:
+          - automatisation de gestion des réserves
+          - suivi automatique des levées de réserves
+          - génération automatique des listes de réserves
+          - reconnaissance automatique des réserves depuis photos
+          - classement automatique des réserves
+          - suivi de statut automatisé
+          - amélioration du suivi OPR
+          - amélioration traçabilité des réserves
+          - amélioration gestion photos associées
+
+        ignore:
+          - tout le reste
+          - outils qualité génériques
+          - solutions industrielles hors bâtiment
+          - annonces marketing
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - réduction du temps de suivi
+          - réduction du nombre de clics
+          - amélioration traçabilité
+          - amélioration gestion des photos
+          - amélioration expérience terrain
+          - automatisation d'une étape manuelle
+          - gain potentiel supérieur à 2 heures par mois
+          - avantage concurrentiel identifiable
+
+    coordination_chantier:
+
+        keep:
+          - amélioration du suivi des intervenants
+          - automatisation des relances
+          - automatisation des notifications
+          - automatisation des affectations
+          - amélioration communication chantier
+          - amélioration suivi des actions
+          - amélioration suivi des responsabilités
+          - amélioration coordination multi intervenants
+
+        ignore:
+          - tout le reste
+          - outils collaboratifs génériques
+          - réseaux sociaux professionnels
+          - annonces marketing
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - réduction du temps administratif
+          - réduction du nombre d'échanges manuels
+          - amélioration du suivi des responsabilités
+          - amélioration coordination chantier
+          - réduction risque d'oubli
+          - gain potentiel supérieur à 2 heures par mois
+
+    suivi_chantier:
+
+        keep:
+          - amélioration du suivi d'avancement
+          - automatisation du reporting
+          - automatisation des indicateurs chantier
+          - suivi automatique des tâches
+          - amélioration visualisation avancement
+          - amélioration pilotage chantier
+          - amélioration gestion planning
+          - amélioration suivi des actions ouvertes
+
+        ignore:
+          - tout le reste
+          - méthodes de gestion de projet génériques
+          - outils hors secteur AEC
+          - annonces marketing
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - amélioration pilotage chantier
+          - amélioration visibilité projet
+          - réduction du temps de reporting
+          - automatisation d'une tâche de suivi
+          - gain potentiel supérieur à 2 heures par mois
+
+    documents_plans:
+
+        keep:
+          - annotation avancée de plans
+          - gestion intelligente des plans PDF
+          - comparaison automatique de versions
+          - reconnaissance automatique d'éléments graphiques
+          - liaison plan remarque
+          - liaison plan photo
+          - amélioration consultation mobile
+          - amélioration consultation tablette
+          - amélioration gestion documentaire chantier
+          - amélioration visualisation plans
+
+        ignore:
+          - tout le reste
+          - viewers PDF génériques
+          - outils CAO sans impact chantier
+          - annonces marketing
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - réduction du nombre de clics
+          - amélioration consultation terrain
+          - amélioration gestion des remarques
+          - amélioration gestion documentaire
+          - gain potentiel supérieur à 2 heures par mois
+          - avantage concurrentiel identifiable
+
+    productivite_terrain:
+
+        keep:
+          - réduction du nombre de clics
+          - réduction de saisie manuelle
+          - automatisation d'actions répétitives
+          - amélioration ergonomie mobile
+          - amélioration ergonomie tablette
+          - amélioration vitesse d'exécution
+          - amélioration fluidité utilisateur
+          - simplification de workflows terrain
+          - réduction de friction utilisateur
+
+        ignore:
+          - tout le reste
+          - tendances UX génériques
+          - concepts théoriques
+          - annonces marketing
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - réduction du nombre de clics
+          - réduction du temps de saisie
+          - amélioration UX majeure
+          - automatisation d'une tâche récurrente
+          - gain potentiel supérieur à 5 minutes par visite
+          - avantage concurrentiel identifiable
+
+
+archifact:
+
+    propositions_honoraires:
+
+        keep:
+          - automatisation de proposition commerciale
+          - automatisation de calcul d'honoraires
+          - amélioration de génération PDF
+          - amélioration de signature électronique
+          - amélioration de validation client
+          - réduction du temps de production des propositions
+          - nouvelles obligations réglementaires impactant les propositions
+
+        ignore:
+          - tout le reste
+          - modèles génériques de devis
+          - contenus marketing
+          - conseils commerciaux génériques
+          - annonces sans impact métier
+
+        agir_triggers:
+          - gain potentiel supérieur à 2 heures par mois
+          - amélioration du taux de signature
+          - amélioration de l'expérience client
+          - réduction des erreurs de calcul
+          - automatisation d'une étape manuelle
+
+    notes_honoraires:
+
+        keep:
+          - automatisation de facturation d'honoraires
+          - amélioration génération PDF
+          - automatisation des situations
+          - automatisation des relances
+          - amélioration suivi paiements
+          - amélioration gestion paiements partiels
+
+        ignore:
+          - tout le reste
+          - contenus marketing
+          - outils hors secteur AEC
+
+        agir_triggers:
+          - gain potentiel supérieur à 2 heures par mois
+          - réduction du risque d'erreur
+          - amélioration du suivi financier
+          - amélioration du recouvrement
+    facturation:
+
+        keep:
+          - automatisation facturation
+          - évolution réglementaire
+          - évolution TVA
+          - évolution obligations comptables
+          - amélioration rapprochement paiements
+          - amélioration suivi encaissements
+
+        ignore:
+          - tout le reste
+          - logiciels généralistes sans avantage clair
+
+        agir_triggers:
+          - obligation réglementaire
+          - gain de temps administratif
+          - réduction du risque comptable
+          - amélioration trésorerie
+
+    facturation_electronique:
+
+        keep:
+          - réforme facturation électronique
+          - évolution PDP
+          - évolution OD
+          - évolution obligations légales
+          - évolution calendrier réglementaire
+          - évolution formats d'échange
+          - évolution conformité
+
+        ignore:
+          - tout le reste
+          - spéculations
+          - articles génériques
+
+        agir_triggers:
+          - changement réglementaire
+          - modification calendrier
+          - obligation technique
+          - nouvelle opportunité produit
+          - risque de non conformité
+
+    comptabilite:
+
+        keep:
+          - automatisation comptable
+          - synchronisation comptable
+          - rapprochement bancaire
+          - intégration logiciels comptables
+          - évolution réglementaire impactant les TPE
+
+        ignore:
+          - tout le reste
+
+        agir_triggers:
+          - réduction saisie manuelle
+          - réduction coût administratif
+          - amélioration qualité données
+
+    gestion_agence:
+
+        keep:
+          - gestion charge de travail
+          - gestion rentabilité missions
+          - suivi temps
+          - pilotage activité
+          - reporting automatisé
+
+        ignore:
+          - tout le reste
+          - méthodes managériales génériques
+
+        agir_triggers:
+          - amélioration rentabilité
+          - amélioration pilotage
+          - gain de temps administratif
+
+    rentabilite:
+
+        keep:
+          - amélioration marge
+          - optimisation honoraires
+          - réduction coûts production
+          - amélioration productivité
+
+        ignore:
+          - tout le reste
+          - conseils business génériques
+
+        agir_triggers:
+          - gain financier mesurable
+          - réduction coût récurrent
+          - amélioration productivité significative
+
+    documents_pdf:
+
+        keep:
+          - génération PDF avancée
+          - signature électronique
+          - formulaires dynamiques
+          - comparaison de documents
+          - automatisation documentaire
+          - amélioration qualité impression
+
+        ignore:
+          - tout le reste
+          - nouveautés bureautiques génériques
+
+        agir_triggers:
+          - amélioration qualité PDF
+          - réduction temps génération
+          - amélioration expérience client
+          - réduction intervention manuelle
+
+
+ia_automatisation_saas:
+
+  archifact:
+
+  sitenote:
+
+  developpement:
+
+    keep:
+      - nouvel agent de développement réellement disponible
+      - amélioration significative du code assisté
+      - outil capable de modifier un projet existant avec contexte
+      - outil capable d'analyser une base de code
+      - outil capable de générer ou corriger des fonctions Supabase
+      - outil capable d'aider sur WeWeb
+      - outil capable d'aider sur SQL ou RLS
+      - outil capable de réduire le temps de debug
+      - outil capable de générer des tests
+      - outil capable de documenter automatiquement le projet
+      - baisse significative du coût des outils IA de développement
+      - alternative locale crédible à un outil payant
+
+    ignore:
+      - tout le reste
+      - annonces marketing IA
+      - benchmarks sans usage concret
+      - promesses non disponibles
+      - démos spectaculaires sans accès produit
+      - modèles IA sans impact développement
+      - outils réservés aux grandes équipes
+      - outils trop complexes à intégrer
+      - annonces déjà reçues par email sans action possible
+
+    agir_triggers:
+      - gain potentiel supérieur à 5 heures par mois
+      - réduction du coût d'abonnement IA
+      - remplacement possible d'un outil payant
+      - amélioration du debug ArchiFact
+      - amélioration du debug SiteNote
+      - réduction dette technique
+      - meilleure compréhension du code existant
+      - accélération commercialisation ArchiFact
+      - accélération commercialisation SiteNote
+
+  analyse_documents:
+    keep:
+          - extraction automatique de données depuis PDF
+          - extraction automatique depuis plans
+          - extraction automatique depuis DPGF
+          - extraction automatique depuis CCTP
+          - extraction automatique depuis comptes rendus
+          - extraction automatique depuis documents administratifs
+          - OCR amélioré réellement disponible
+          - analyse de documents volumineux
+          - comparaison automatique de versions de documents
+          - extraction structurée de données métier
+          - réduction significative du travail manuel documentaire
+          - solution locale crédible d'analyse documentaire
+
+        ignore:
+          - tout le reste
+          - chat PDF générique
+          - annonces marketing IA
+          - benchmarks
+          - démonstrations sans produit disponible
+          - promesses de RAG sans cas concret
+          - solutions entreprises hors budget
+          - outils nécessitant une intégration complexe
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - gain potentiel supérieur à 5 heures par mois
+          - automatisation d'une tâche documentaire récurrente
+          - extraction exploitable dans ArchiFact
+          - extraction exploitable dans SiteNote
+          - réduction de saisie manuelle
+          - amélioration qualité des données
+          - amélioration analyse des plans
+          - amélioration analyse des PDF
+          - remplacement d'un abonnement existant
+          - solution locale viable
+          - réduction significative du temps de traitement documentaire
+  generation_contenu:
+
+    automatisation_workflows:
+
+    keep:
+      - automatisation réellement disponible
+      - suppression d'une tâche manuelle récurrente
+      - suppression d'une double saisie
+      - automatisation de génération de documents
+      - automatisation de traitement documentaire
+      - automatisation de reporting
+      - automatisation d'envoi d'emails
+      - automatisation de relances
+      - automatisation de synchronisation de données
+      - automatisation de classement documentaire
+      - automatisation exploitable dans ArchiFact
+      - automatisation exploitable dans SiteNote
+      - remplacement possible d'un workflow existant
+      - alternative à un outil payant
+
+    ignore:
+      - tout le reste
+      - annonces marketing
+      - nouveaux connecteurs sans usage identifié
+      - démonstrations théoriques
+      - automatisations non disponibles
+      - automatisations nécessitant une équipe dédiée
+      - workflows trop complexes à maintenir
+      - annonces déjà reçues par email sans action possible
+
+    agir_triggers:
+      - gain potentiel supérieur à 5 heures par mois
+      - suppression d'une tâche récurrente
+      - suppression d'une double saisie
+      - réduction du nombre de clics
+      - réduction du nombre d'outils utilisés
+      - suppression d'un abonnement
+      - automatisation exploitable dans ArchiFact
+      - automatisation exploitable dans SiteNote
+      - réduction du risque d'erreur humaine
+      - réduction du temps administratif
+      - amélioration de la qualité des données
+
+
+ia_ecosysteme:
+
+    modeles:
+
+        keep:
+          - amélioration majeure de raisonnement
+          - amélioration majeure d'analyse documentaire
+          - augmentation significative du contexte
+          - baisse significative des coûts
+          - amélioration majeure de fiabilité
+          - nouvelle capacité exploitable dans mes produits
+          - disponibilité réelle d'une capacité attendue
+
+        ignore:
+          - tout le reste
+          - benchmarks
+          - classements
+          - annonces marketing
+          - comparatifs théoriques
+          - sorties de modèles sans impact concret
+
+        agir_triggers:
+          - réduction de coût
+          - nouvelle capacité exploitable
+          - amélioration significative de productivité
+          - amélioration analyse documentaire
+          - amélioration automatisation
+
+    agents:
+
+        keep:
+          - agent réellement disponible
+          - agent autonome exploitable
+          - agent capable d'utiliser plusieurs outils
+          - agent capable de réaliser une tâche métier complète
+          - agent local crédible
+          - réduction significative du travail manuel
+
+        ignore:
+          - tout le reste
+          - démonstrations
+          - prototypes de recherche
+          - annonces sans accès réel
+
+        agir_triggers:
+          - remplacement d'une tâche humaine
+          - automatisation d'un processus complet
+          - gain supérieur à 5 heures par mois
+          - réduction coût opérationnel
+
+    local_ai:
+
+        keep:
+          - nouveau modèle local performant
+          - amélioration significative d'Ollama
+          - amélioration significative de l'inférence locale
+          - réduction des besoins matériels
+          - alternative locale à un abonnement payant
+          - amélioration confidentialité
+
+        ignore:
+          - tout le reste
+          - modèles expérimentaux
+          - benchmarks sans usage concret
+
+        agir_triggers:
+          - remplacement d'un abonnement
+          - réduction coût IA
+          - amélioration confidentialité
+          - capacité exploitable localement
+
+    hardware:
+
+        keep:
+          - évolution majeure GPU IA
+          - baisse significative du coût matériel
+          - nouveau matériel compatible IA locale
+          - amélioration significative performance/prix
+
+        ignore:
+          - tout le reste
+          - annonces gaming
+          - benchmarks gaming
+          - accessoires
+
+        agir_triggers:
+          - amélioration ROI matériel
+          - amélioration IA locale
+          - réduction coût infrastructure
+
+    open_source:
+
+        keep:
+          - projet open source réellement exploitable
+          - alternative crédible à un outil payant
+          - amélioration significative d'un projet utilisé
+          - nouveau framework utile à mes usages
+
+        ignore:
+          - tout le reste
+          - projets expérimentaux
+          - projets sans adoption
+
+        agir_triggers:
+          - suppression abonnement
+          - réduction coût
+          - amélioration productivité
+          - amélioration automatisation
+
+    acteurs_marche:
+
+        keep:
+          - fusion majeure
+          - acquisition majeure
+          - changement de stratégie majeur
+          - disparition d'un acteur important
+          - évolution impactant le marché IA
+
+        ignore:
+          - tout le reste
+          - levées de fonds mineures
+          - déclarations de dirigeants
+          - actualité financière courante
+
+        agir_triggers:
+          - impact sur les outils utilisés
+          - impact sur les coûts
+          - impact sur l'IA locale
+          - impact sur la concurrence
+
+    pricing_ia:
+
+        keep:
+          - baisse tarifaire significative
+          - hausse tarifaire significative
+          - nouveau modèle économique
+          - nouvelle offre entreprise
+          - nouvelle offre locale
+
+        ignore:
+          - tout le reste
+          - promotions temporaires
+          - offres marketing
+
+        agir_triggers:
+          - économie de coût
+          - remplacement d'abonnement
+          - amélioration ROI
+          - opportunité de migration
+
+
+business_saas:
+
+    pricing:
+
+        keep:
+          - évolution des modèles tarifaires SaaS
+          - nouvelles stratégies de monétisation applicables
+          - évolution des attentes clients sur les abonnements
+          - retours mesurables sur les prix SaaS
+          - évolution du pricing dans l'AEC
+          - nouvelles pratiques de facturation récurrente
+
+        ignore:
+          - tout le reste
+          - théories pricing
+          - analyses sans données
+          - stratégies non applicables aux TPE
+          - annonces marketing
+          - annonces déjà reçues par email sans action possible
+
+        agir_triggers:
+          - augmentation potentielle du revenu
+          - réduction du churn
+          - amélioration conversion
+          - simplification de l'offre
+          - gain financier mesurable
+
+    acquisition:
+
+        keep:
+          - canal d'acquisition applicable à l'AEC
+          - stratégie ayant des résultats mesurables
+          - acquisition organique exploitable
+          - acquisition à faible coût
+          - partenariats applicables
+          - stratégie de recommandation
+
+        ignore:
+          - tout le reste
+          - growth hacking générique
+          - stratégies grands groupes
+          - publicité sans ROI démontré
+          - annonces marketing
+
+        agir_triggers:
+          - coût d'acquisition faible
+          - acquisition reproductible
+          - canal adapté à ArchiFact
+          - canal adapté à SiteNote
+          - gain potentiel de clients
+
+    retention:
+
+        keep:
+          - réduction du churn
+          - amélioration engagement utilisateur
+          - amélioration onboarding
+          - amélioration adoption produit
+          - amélioration rétention SaaS
+
+        ignore:
+          - tout le reste
+          - théories marketing
+          - contenus génériques
+
+        agir_triggers:
+          - réduction churn
+          - augmentation durée d'abonnement
+          - amélioration satisfaction client
+          - augmentation utilisation produit
+
+    concurrence:
+
+        keep:
+          - évolution majeure d'un concurrent direct
+          - changement tarifaire concurrent
+          - nouvelle fonctionnalité concurrente majeure
+          - acquisition ou fusion d'un concurrent
+          - levée de fonds d'un concurrent direct
+          - changement de positionnement concurrent
+
+        ignore:
+          - tout le reste
+          - marketing concurrent
+          - contenus promotionnels
+          - petites évolutions sans impact
+
+        agir_triggers:
+          - menace concurrentielle
+          - opportunité de différenciation
+          - évolution marché significative
+          - changement de stratégie nécessaire
+
+    packaging_offres:
+
+        keep:
+          - nouvelles méthodes de présentation d'offres
+          - simplification catalogue
+          - amélioration lisibilité des offres
+          - amélioration compréhension client
+          - nouvelles pratiques SaaS applicables
+
+        ignore:
+          - tout le reste
+          - concepts marketing abstraits
+          - tendances sans données
+
+        agir_triggers:
+          - amélioration conversion
+          - simplification de vente
+          - réduction friction commerciale
+
+    go_to_market:
+
+        keep:
+          - lancement SaaS dans l'AEC
+          - retour d'expérience de lancement
+          - stratégie de mise sur le marché applicable
+          - partenariats de distribution
+          - stratégie de niche validée
+
+        ignore:
+          - tout le reste
+          - startups hors secteur
+          - contenus inspirationnels
+          - annonces marketing
+
+        agir_triggers:
+          - amélioration vitesse de commercialisation
+          - réduction risque lancement
+          - augmentation visibilité produit
+          - stratégie applicable immédiatement
+
+
+signaux_faibles:
+
+    opportunites:
+
+        keep:
+          - nouveau besoin récurrent observé
+          - problème métier peu couvert
+          - marché mal servi
+          - nouvelle obligation créant un besoin logiciel
+          - opportunité de niche
+          - nouvelle catégorie de service digital
+          - besoin exprimé de façon répétée
+
+        ignore:
+          - tout le reste
+          - idées isolées
+          - tendances sans validation
+          - spéculations
+
+        agir_triggers:
+          - problème observé plusieurs fois
+          - marché identifiable
+          - besoin monétisable
+          - complément naturel à ArchiFact
+          - complément naturel à SiteNote
+
+    nouveaux_marches:
+
+        keep:
+          - marché adjacent à l'AEC
+          - nouvelle réglementation créant un marché
+          - digitalisation d'un métier proche
+          - nouveau besoin administratif récurrent
+          - marché B2B proche de mes compétences
+
+        ignore:
+          - tout le reste
+          - marchés éloignés
+          - marchés grand public
+          - opportunités spéculatives
+
+        agir_triggers:
+          - forte proximité métier
+          - faible concurrence
+          - besoin logiciel identifiable
+          - potentiel de réutilisation de la stack existante
+
+    nouvelles_reglementations:
+
+        keep:
+          - évolution réglementaire AEC
+          - évolution réglementaire comptable
+          - évolution réglementaire numérique
+          - évolution réglementaire facturation
+          - évolution marchés publics
+          - évolution obligations documentaires
+          - évolution urbanisme
+          - évolution conformité
+
+        ignore:
+          - tout le reste
+          - réglementation sans impact métier
+          - analyses juridiques théoriques
+
+        agir_triggers:
+          - obligation future
+          - opportunité produit
+          - risque de non conformité
+          - création d'un nouveau besoin logiciel
+
+    risques:
+
+        keep:
+          - dépendance fournisseur critique
+          - évolution pouvant menacer un SaaS
+          - changement réglementaire défavorable
+          - évolution concurrentielle majeure
+          - évolution technologique pouvant rendre une solution obsolète
+          - risque sécurité significatif
+
+        ignore:
+          - tout le reste
+          - scénarios catastrophes improbables
+          - spéculations alarmistes
+
+        agir_triggers:
+          - risque réel identifié
+          - impact potentiel sur ArchiFact
+          - impact potentiel sur SiteNote
+          - dépendance critique
+          - nécessité d'anticipation
+
+    idees_produit:
+
+        keep:
+          - idée observée plusieurs fois
+          - besoin récurrent exprimé
+          - fonctionnalité demandée par plusieurs acteurs
+          - problème récurrent sans solution satisfaisante
+          - amélioration applicable à ArchiFact
+          - amélioration applicable à SiteNote
+
+        ignore:
+          - tout le reste
+          - idées isolées
+          - concepts théoriques
+          - tendances passagères
+
+        agir_triggers:
+          - demande répétée
+          - forte valeur utilisateur
+          - faible complexité de mise en œuvre
+          - avantage concurrentiel identifiable
+          - potentiel commercial identifiable

@@ -1,0 +1,397 @@
+sources:
+
+  # ============================================================
+  # STACK TECHNIQUE — sources critiques
+  # ============================================================
+
+  - name: WeWeb Changelog
+    block: stack_technique
+    sub_block: weweb
+    priority: critical
+    type: webpage
+    url: https://www.weweb.io/changelog
+
+  - name: Supabase Changelog
+    block: stack_technique
+    sub_block: supabase
+    priority: critical
+    type: webpage
+    url: https://supabase.com/changelog
+
+  - name: Supabase GitHub Releases
+    block: stack_technique
+    sub_block: supabase
+    priority: high
+    type: github_releases
+    url: https://github.com/supabase/supabase/releases
+
+  - name: Stripe Changelog
+    block: stack_technique
+    sub_block: stripe
+    priority: critical
+    type: webpage
+    url: https://docs.stripe.com/changelog
+
+  - name: Resend Changelog
+    block: stack_technique
+    sub_block: resend
+    priority: high
+    type: webpage
+    url: https://resend.com/changelog
+
+
+  # ============================================================
+  # ARCHIFACT — facturation électronique / conformité
+  # ============================================================
+
+  - name: DGFIP Facturation Electronique
+    block: archifact
+    sub_block: facturation_electronique
+    priority: critical
+    type: webpage
+    url: https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique
+
+  - name: DGFIP Plateformes Agreees
+    block: archifact
+    sub_block: facturation_electronique
+    priority: critical
+    type: webpage
+    url: https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees
+
+  - name: Economie Gouv Facturation Electronique
+    block: archifact
+    sub_block: facturation_electronique
+    priority: critical
+    type: webpage
+    url: https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises
+
+  - name: FNFE-MPE
+    block: archifact
+    sub_block: facturation_electronique
+    priority: high
+    type: webpage
+    url: https://fnfe-mpe.org
+
+  - name: FNFE-MPE Factur-X
+    block: archifact
+    sub_block: facturation_electronique
+    priority: high
+    type: webpage
+    url: https://fnfe-mpe.org/factur-x/
+
+
+  # ============================================================
+  # IA AUTOMATISATION SAAS — développement
+  # ============================================================
+
+  - name: OpenAI API Changelog
+    block: ia_automatisation_saas
+    sub_block: developpement
+    priority: high
+    type: webpage
+    url: https://developers.openai.com/api/docs/changelog
+
+  - name: Claude Code Changelog
+    block: ia_automatisation_saas
+    sub_block: developpement
+    priority: high
+    type: webpage
+    url: https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
+
+  - name: Claude Code Releases
+    block: ia_automatisation_saas
+    sub_block: developpement
+    priority: high
+    type: github_releases
+    url: https://github.com/anthropics/claude-code/releases
+
+  - name: Cursor Blog
+    block: ia_automatisation_saas
+    sub_block: developpement
+    priority: high
+    type: webpage
+    url: https://cursor.com/blog
+
+  - name: Windsurf Blog
+    block: ia_automatisation_saas
+    sub_block: developpement
+    priority: medium
+    type: webpage
+    url: https://windsurf.com/blog
+
+
+  # ============================================================
+  # IA ECOSYSTEME — modèles / acteurs
+  # ============================================================
+
+  - name: OpenAI News
+    block: ia_ecosysteme
+    sub_block: modeles
+    priority: medium
+    type: webpage
+    url: https://openai.com/news/
+
+  - name: Anthropic News
+    block: ia_ecosysteme
+    sub_block: modeles
+    priority: medium
+    type: webpage
+    url: https://www.anthropic.com/news
+
+  - name: Mistral Changelog
+    block: ia_ecosysteme
+    sub_block: modeles
+    priority: high
+    type: webpage
+    url: https://docs.mistral.ai/resources/changelogs
+
+
+  # ============================================================
+  # IA ECOSYSTEME — local AI
+  # ============================================================
+
+  - name: Ollama Blog
+    block: ia_ecosysteme
+    sub_block: local_ai
+    priority: critical
+    type: webpage
+    url: https://ollama.com/blog
+
+  - name: Ollama GitHub Releases
+    block: ia_ecosysteme
+    sub_block: local_ai
+    priority: high
+    type: github_releases
+    url: https://github.com/ollama/ollama/releases
+
+  - name: LM Studio Blog
+    block: ia_ecosysteme
+    sub_block: local_ai
+    priority: high
+    type: webpage
+    url: https://lmstudio.ai/blog
+
+  - name: llama.cpp Releases
+    block: ia_ecosysteme
+    sub_block: local_ai
+    priority: high
+    type: github_releases
+    url: https://github.com/ggml-org/llama.cpp/releases
+
+  - name: Open WebUI Blog
+    block: ia_ecosysteme
+    sub_block: local_ai
+    priority: medium
+    type: webpage
+    url: https://openwebui.com/blog
+
+  - name: AnythingLLM Blog
+    block: ia_ecosysteme
+    sub_block: local_ai
+    priority: medium
+    type: webpage
+    url: https://anythingllm.com/blog
+
+
+  # ============================================================
+  # SITENOTE — chantier / AEC
+  # ============================================================
+
+  - name: Le Moniteur
+    block: sitenote
+    sub_block: coordination_chantier
+    priority: medium
+    type: webpage
+    url: https://www.lemoniteur.fr
+
+  - name: CSTB Actualites
+    block: sitenote
+    sub_block: documents_plans
+    priority: medium
+    type: webpage
+    url: https://www.cstb.fr
+
+
+  # ============================================================
+  # BUSINESS SAAS
+  # ============================================================
+
+  - name: SaaStr
+    block: business_saas
+    sub_block: acquisition
+    priority: medium
+    type: webpage
+    url: https://www.saastr.com
+
+  - name: Lenny Newsletter
+    block: business_saas
+    sub_block: retention
+    priority: medium
+    type: webpage
+    url: https://www.lennysnewsletter.com
+
+  - name: Indie Hackers
+    block: business_saas
+    sub_block: go_to_market
+    priority: medium
+    type: webpage
+    url: https://www.indiehackers.com
+
+  - name: Paddle Blog
+    block: business_saas
+    sub_block: pricing
+    priority: medium
+    type: webpage
+    url: https://www.paddle.com/blog
+    
+  # ============================================================
+  # ARCHIFACT — ERP métier / concurrence
+  # ============================================================
+
+  - name: Monograph Blog
+    block: archifact
+    sub_block: erp_metier
+    priority: high
+    type: webpage
+    url: https://monograph.com/blog
+
+  - name: Deltek Blog
+    block: archifact
+    sub_block: erp_metier
+    priority: high
+    type: webpage
+    url: https://www.deltek.com/en/blog
+
+  - name: BQE Blog
+    block: archifact
+    sub_block: erp_metier
+    priority: medium
+    type: webpage
+    url: https://www.bqe.com/blog
+
+  - name: Ajera Resources
+    block: archifact
+    sub_block: erp_metier
+    priority: medium
+    type: webpage
+    url: https://www.deltek.com/en/products/project-erp/ajera
+
+  - name: BIMoffice Actualités
+    block: archifact
+    sub_block: erp_metier
+    priority: high
+    type: webpage
+    url: https://www.bimoffice.fr
+
+  - name: Mediabat Blog
+    block: archifact
+    sub_block: erp_metier
+    priority: medium
+    type: webpage
+    url: https://www.mediabat.com
+
+  - name: Batappli Actualités
+    block: archifact
+    sub_block: erp_metier
+    priority: medium
+    type: webpage
+    url: https://www.batappli.fr/blog-du-logiciel-batiment
+    
+  - name: Ootil Actu
+    block: archifact
+    sub_block: erp_metier
+    priority: medium
+    type: webpage
+    url: https://www.ooti.co/fr/ressources-/blog
+
+
+  # ============================================================
+  # ARCHIFACT — gestion financière / facturation SaaS
+  # ============================================================
+
+  - name: Pennylane Blog
+    block: archifact
+    sub_block: gestion_financiere
+    priority: high
+    type: webpage
+    url: https://www.pennylane.com/fr/blog
+
+  - name: Indy Blog
+    block: archifact
+    sub_block: gestion_financiere
+    priority: medium
+    type: webpage
+    url: https://www.indy.fr/blog
+
+  - name: Tiime Blog
+    block: archifact
+    sub_block: gestion_financiere
+    priority: medium
+    type: webpage
+    url: https://www.tiime.fr/blog
+
+  - name: Axonaut Blog
+    block: archifact
+    sub_block: gestion_financiere
+    priority: medium
+    type: webpage
+    url: https://axonaut.com/blog
+
+  - name: Obat Blog
+    block: archifact
+    sub_block: gestion_financiere
+    priority: high
+    type: webpage
+    url: https://www.obat.fr/blog
+
+
+  # ============================================================
+  # SITENOTE — concurrence chantier
+  # ============================================================
+
+  - name: Archipad Blog
+    block: sitenote
+    sub_block: concurrence
+    priority: high
+    type: webpage
+    url: https://www.archipad.com/blog
+
+  - name: Alobees Blog
+    block: sitenote
+    sub_block: concurrence
+    priority: high
+    type: webpage
+    url: https://www.alobees.com/blog
+
+  - name: Fieldwire Blog
+    block: sitenote
+    sub_block: concurrence
+    priority: medium
+    type: webpage
+    url: https://www.fieldwire.com/blog
+
+  - name: Kairnial
+    block: sitenote
+    sub_block: concurrence
+    priority: medium
+    type: webpage
+    url: https://www.kairnial.com
+
+
+  # ============================================================
+  # SIGNAUX FAIBLES — réglementation métier AEC
+  # ============================================================
+
+  - name: Ordre des Architectes
+    block: signaux_faibles
+    sub_block: nouvelles_reglementations
+    priority: critical
+    type: webpage
+    url: https://www.architectes.org
+
+  - name: CINOV
+    block: signaux_faibles
+    sub_block: nouvelles_reglementations
+    priority: medium
+    type: webpage
+    url: https://www.cinov.fr

@@ -1,0 +1,105 @@
+user:
+
+  name: JD
+
+  profile:
+    - entrepreneur
+    - bureau_etudes
+    - maitrise_oeuvre
+    - opc
+    - economiste_construction
+
+  products:
+
+    archifact:
+      description: >
+        SaaS métier destiné aux architectes, bureaux d'études,
+        économistes, OPC et maîtres d'œuvre.
+
+      modules:
+        - propositions_honoraires
+        - notes_honoraires
+        - facturation
+        - facturation_electronique
+        - gestion_agence
+        - rentabilite
+
+    sitenote:
+      description: >
+        SaaS de suivi de chantier destiné aux architectes,
+        maîtres d'œuvre et OPC.
+
+      modules:
+        - comptes_rendus
+        - suivi_chantier
+        - opr
+        - reserves
+        - plans
+        - remarques_terrain
+
+  stack:
+
+    frontend:
+      - weweb
+
+    backend:
+      - supabase
+
+    paiement:
+      - stripe
+
+    email:
+      - resend
+
+  ai:
+
+    local_ai: true
+
+    hardware:
+      gpu: rtx_4090
+      ram: 32_go
+
+    outils:
+      - ollama
+      - qwen3_coder_30b
+      - mixtral
+
+  objectives:
+
+    - accelerer_developpement
+    - accelerer_commercialisation
+    - reduire_dette_technique
+    - reduire_couts_logiciels
+    - automatiser_taches_recurrentes
+    - surveiller_reglementation
+    - detecter_opportunites_marche
+    - developper_ia_locale
+
+  scoring_rules:
+
+    important:
+      - gain_temps
+      - gain_argent
+      - reduction_clics
+      - reduction_dette_technique
+      - amelioration_securite
+      - automatisation
+      - ia_locale
+      - aide_developpement
+      - commercialisation
+
+    tres_important:
+      - risque_production
+      - migration_obligatoire
+      - changement_tarifaire
+      - changement_reglementaire
+      - impact_archifact
+      - impact_sitenote
+
+    faible_interet:
+      - marketing
+      - success_story
+      - recrutement
+      - evenement
+      - webinar
+      - contenu_generique
