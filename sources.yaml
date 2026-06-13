@@ -44,12 +44,12 @@ sources:
   # ARCHIFACT — facturation électronique / conformité
   # ============================================================
 
-  - name: DGFIP Facturation Electronique
+  - name: FNFE 
     block: archifact
     sub_block: facturation_electronique
     priority: critical
     type: webpage
-    url: https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique
+    url: https://fnfe-mpe.org/articles/
 
   - name: DGFIP Plateformes Agreees
     block: archifact
@@ -64,20 +64,6 @@ sources:
     priority: critical
     type: webpage
     url: https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises
-
-  - name: FNFE-MPE
-    block: archifact
-    sub_block: facturation_electronique
-    priority: high
-    type: webpage
-    url: https://fnfe-mpe.org
-
-  - name: FNFE-MPE Factur-X
-    block: archifact
-    sub_block: facturation_electronique
-    priority: high
-    type: webpage
-    url: https://fnfe-mpe.org/factur-x/
 
 
   # ============================================================
@@ -104,6 +90,7 @@ sources:
     priority: high
     type: github_releases
     url: https://github.com/anthropics/claude-code/releases
+
 
   - name: Cursor Blog
     block: ia_automatisation_saas
@@ -244,6 +231,13 @@ sources:
     type: webpage
     url: https://www.paddle.com/blog
     
+  - name: Tech Crunch
+    block: business_saas
+    sub_block: pricing
+    priority: medium
+    type: webpage
+    url: https://techcrunch.com/latest/
+    
   # ============================================================
   # ARCHIFACT — ERP métier / concurrence
   # ============================================================
@@ -276,19 +270,6 @@ sources:
     type: webpage
     url: https://www.deltek.com/en/products/project-erp/ajera
 
-  - name: BIMoffice Actualités
-    block: archifact
-    sub_block: erp_metier
-    priority: high
-    type: webpage
-    url: https://www.bimoffice.fr
-
-  - name: Mediabat Blog
-    block: archifact
-    sub_block: erp_metier
-    priority: medium
-    type: webpage
-    url: https://www.mediabat.com
 
   - name: Batappli Actualités
     block: archifact
@@ -356,26 +337,12 @@ sources:
     type: webpage
     url: https://www.archipad.com/blog
 
-  - name: Alobees Blog
-    block: sitenote
-    sub_block: concurrence
-    priority: high
-    type: webpage
-    url: https://www.alobees.com/blog
-
   - name: Fieldwire Blog
     block: sitenote
     sub_block: concurrence
     priority: medium
     type: webpage
     url: https://www.fieldwire.com/blog
-
-  - name: Kairnial
-    block: sitenote
-    sub_block: concurrence
-    priority: medium
-    type: webpage
-    url: https://www.kairnial.com
 
 
   # ============================================================
@@ -387,7 +354,7 @@ sources:
     sub_block: nouvelles_reglementations
     priority: critical
     type: webpage
-    url: https://www.architectes.org
+    url: https://www.architectes.org/actualites?sort=field_publication&order=desc
 
   - name: CINOV
     block: signaux_faibles

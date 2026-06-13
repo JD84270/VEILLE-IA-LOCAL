@@ -179,8 +179,8 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 10px;
       padding: 12px;
       margin: 0 0 24px;
@@ -189,14 +189,14 @@
       border: 1px solid var(--line);
       box-shadow: 0 12px 28px rgba(31,36,48,0.05);
       backdrop-filter: blur(14px);
-      overflow: hidden;
+      overflow: visible;
     }
 
     .tab-btn {
-      flex: 0 0 auto;
+      width: 100%;
       border: 0;
       cursor: pointer;
-      padding: 10px 14px;
+      padding: 10px 12px;
       border-radius: 999px;
       background: #ffffff;
       border: 1px solid #e4e7f0;
@@ -204,6 +204,7 @@
       font-size: 13px;
       font-weight: 850;
       white-space: nowrap;
+      text-align: center;
     }
 
     .tab-btn span {
@@ -589,7 +590,7 @@
 
         <div class="meta-row">
           <span class="pill">Saturday 13 June 2026</span>
-          <span class="pill">Dernière analyse : 13/06/2026 12:55</span>
+          <span class="pill">Dernière analyse : 13/06/2026 14:11</span>
           <span class="pill">201 sources analysées</span>
           <span class="pill">Mode local</span>
         </div>
@@ -597,7 +598,7 @@
 
       <aside class="score-card">
         <span>Signal utile</span>
-        <strong>48</strong>
+        <strong>54</strong>
         <small>score journalier</small>
       </aside>
     </header>
@@ -610,17 +611,17 @@
 
       <article class="kpi">
         <span class="label">À tester</span>
-        <div class="value">43 <small>items</small></div>
+        <div class="value">50 <small>items</small></div>
       </article>
 
       <article class="kpi watch">
         <span class="label">À surveiller</span>
-        <div class="value">45 <small>items</small></div>
+        <div class="value">50 <small>items</small></div>
       </article>
 
       <article class="kpi ignore">
         <span class="label">Ignorés</span>
-        <div class="value">5 <small>items</small></div>
+        <div class="value">6 <small>items</small></div>
       </article>
     </section>
 
@@ -636,11 +637,11 @@
         
       <button class="tab-btn" data-target="ia_automatisation_saas">IA SaaS <span>31</span></button>
         
+      <button class="tab-btn" data-target="ia_ecosysteme">IA locale <span>31</span></button>
+        
       <button class="tab-btn" data-target="business_saas">Business <span>30</span></button>
         
       <button class="tab-btn" data-target="signaux_faibles">Signaux <span>4</span></button>
-        
-      <button class="tab-btn" data-target="ia_ecosysteme">IA locale <span>31</span></button>
         
     </nav>
     
@@ -1391,6 +1392,64 @@
     </article>
     
 
+    <article class="item watch-item" data-item-id="221">
+      <div class="item-top">
+        <div>
+          <span class="source">BQE Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>erp_metier</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>BQE CORE Blog – Time Tracking and Project Management Software</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;article présente des contenus généraux sur la gestion de projet, les KPIs et les factures dans le domaine de l&#x27;ingénierie, mais sans impact direct ou spécifique sur ArchiFact ou SiteNote. Il s&#x27;agit plus d&#x27;une ressou ressource d&#x27;information générale pour le marché AEC.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune action immédiate requise.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible impact sur les produits, la stack ou les coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Classer dans une base de connaissance pour référence future si n nécessaire.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="221" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="221" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="221" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="221" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="221" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.bqe.com/blog" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:09.238027</span>
+      </div>
+    </article>
+    
+
     <article class="item watch-item" data-item-id="254">
       <div class="item-top">
         <div>
@@ -1503,64 +1562,6 @@
       <div class="item-footer">
         <a class="source-link" href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/calendrier_reforme_facturation_electronique_18012024.pdf.pdf" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
         <span class="analyzed-at">Analysé : 2026-06-06T21:50:12.470109</span>
-      </div>
-    </article>
-    
-
-    <article class="item watch-item" data-item-id="257">
-      <div class="item-top">
-        <div>
-          <span class="source">DGFIP Plateformes Agreees</span>
-          <div class="mini-meta">
-            <span>ArchiFact</span>
-            <span>facturation_electronique</span>
-            <span>Priorité Critique</span>
-            <span>Statut Nouveau</span>
-          </div>
-        </div>
-        <span class="decision watch">SURVEILLER · score 6</span>
-      </div>
-
-      <h3>Je consulte la liste des plateformes agréées | impots.gouv.fr</h3>
-
-      <div class="analysis-grid">
-        
-      <div class="analysis-card reason">
-        <span>Pourquoi c’est important</span>
-        <p>Cette information concerne la liste des plateformes agréées par l&#x27;a l&#x27;administration pour la facturation électronique, ce qui est pertinent pou pour ArchiFact dans le module de facturation électronique. Cependant, il s&#x27; s&#x27;agit d&#x27;une liste statique et informative, pas d&#x27;une nouveauté immédiate o ou applicable.</p>
-      </div>
-    
-        
-      <div class="analysis-card action-box">
-        <span>Action recommandée</span>
-        <p>Aucune</p>
-      </div>
-    
-        
-      <div class="analysis-card impact">
-        <span>Impact potentiel</span>
-        <p>Faible à moyen, potentiellement utile pour la conformité future, ma mais pas immédiatement critique pour ArchiFact ni SiteNote.</p>
-      </div>
-    
-        
-      <div class="analysis-card next">
-        <span>Prochaine étape</span>
-        <p>Suivre les mises à jour de la liste et les éventuelles modificat modifications de critères d&#x27;interopérabilité.</p>
-      </div>
-    
-      </div>
-
-      <div class="card-actions">
-        <button data-id="257" data-status="viewed" data-feedback="relevant">Lu</button>
-        <button data-id="257" data-status="in_progress" data-feedback="tested">À tester</button>
-        <button data-id="257" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
-        <button data-id="257" data-status="done" data-feedback="implemented">Traité</button>
-        <button data-id="257" data-status="archived" data-feedback="archived">Archiver</button>
-      </div>
-
-      <div class="item-footer">
-        <a class="source-link" href="https://www.impots.gouv.fr/liste-des-plateformes-de-dematerialisation-partenaires-pdp-immatriculees-sous-reserve" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
-        <span class="analyzed-at">Analysé : 2026-06-06T21:50:13.484067</span>
       </div>
     </article>
     
@@ -3923,7 +3924,7 @@
             <h3>À surveiller</h3>
             <p>Sujets utiles mais encore incertains.</p>
           </div>
-          <span class="badge watch">SURVEILLER · 15</span>
+          <span class="badge watch">SURVEILLER · 17</span>
         </div>
 
         
@@ -4039,6 +4040,64 @@
       <div class="item-footer">
         <a class="source-link" href="https://fnfe-mpe.org/factur-x/" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
         <span class="analyzed-at">Analysé : 2026-06-06T20:54:14.830768</span>
+      </div>
+    </article>
+    
+
+    <article class="item watch-item" data-item-id="221">
+      <div class="item-top">
+        <div>
+          <span class="source">BQE Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>erp_metier</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>BQE CORE Blog – Time Tracking and Project Management Software</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;article présente des contenus généraux sur la gestion de projet, les KPIs et les factures dans le domaine de l&#x27;ingénierie, mais sans impact direct ou spécifique sur ArchiFact ou SiteNote. Il s&#x27;agit plus d&#x27;une ressou ressource d&#x27;information générale pour le marché AEC.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune action immédiate requise.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible impact sur les produits, la stack ou les coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Classer dans une base de connaissance pour référence future si n nécessaire.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="221" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="221" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="221" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="221" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="221" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.bqe.com/blog" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:09.238027</span>
       </div>
     </article>
     
@@ -4623,6 +4682,64 @@
     </article>
     
 
+    <article class="item watch-item" data-item-id="223">
+      <div class="item-top">
+        <div>
+          <span class="source">Mediabat Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>erp_metier</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 5</span>
+      </div>
+
+      <h3>Mediabat - Logiciel devis facture batiment pour les artisans du BTP</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette source décrit un logiciel concurrent ciblant les artisans du BTP, avec des fonctionnalités similaires à ArchiFact (devis, facturation, s suivi de chantier). Cependant, elle ne présente pas d&#x27;impact immédiat ni d&#x27; d&#x27;action requise pour JD. Elle est plus pertinente pour une veille stratégi stratégique à long terme que pour une décision immédiate.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible impact sur ArchiFact ou SiteNote, mais potentiel d’analyse c concurrentielle</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre l’évolution du marché BTP et des produits concurrents dan dans un délai de 3 mois</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="223" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="223" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="223" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="223" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="223" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.mediabat.com" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:11.138751</span>
+      </div>
+    </article>
+    
+
     <article class="item watch-item" data-item-id="259">
       <div class="item-top">
         <div>
@@ -4805,7 +4922,7 @@
             <h3>Lecture</h3>
             <p>Informations de contexte sans action immédiate.</p>
           </div>
-          <span class="badge ok">LECTURE · 4</span>
+          <span class="badge ok">LECTURE · 5</span>
         </div>
 
         
@@ -4863,6 +4980,64 @@
       <div class="item-footer">
         <a class="source-link" href="https://monograph.com/blog/ai-impact-architecture-engineering-firms" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
         <span class="analyzed-at">Analysé : 2026-06-13T12:55:26.507951</span>
+      </div>
+    </article>
+    
+
+    <article class="item read-item" data-item-id="226">
+      <div class="item-top">
+        <div>
+          <span class="source">Indy Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>gestion_financiere</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>Le blog d&#x27;Indy - toutes les informations &amp; actualités utiles</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article est une page de blog généraliste avec des sujets variés variés liés à la comptabilité, à la fiscalité et aux démarches administrati administratives. Il ne contient aucune information spécifique ou urgente ap applicable à ArchiFact ou SiteNote, ni aucun changement technique ou réglem réglementaire direct.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact sur les produits, la stack ou les coûts de JD</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre les actualités fiscales via des sources plus ciblées si n nécessaire, mais pas urgent</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="226" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="226" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="226" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="226" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="226" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.indy.fr/blog" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:12.103686</span>
       </div>
     </article>
     
@@ -5049,7 +5224,7 @@
             <h3>Archives</h3>
             <p>Bruit filtré ou éléments peu utiles actuellement.</p>
           </div>
-          <span class="badge ignore">ARCHIVE · 5</span>
+          <span class="badge ignore">ARCHIVE · 6</span>
         </div>
 
         
@@ -5107,6 +5282,64 @@
       <div class="item-footer">
         <a class="source-link" href="https://www.deltek.com/en/blog" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
         <span class="analyzed-at">Analysé : 2026-06-06T22:29:37.242906</span>
+      </div>
+    </article>
+    
+
+    <article class="item ignore-item" data-item-id="222">
+      <div class="item-top">
+        <div>
+          <span class="source">Ajera Resources</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>erp_metier</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision ignore">ARCHIVE · score 2</span>
+      </div>
+
+      <h3>Project Management &amp; Accounting Software | Deltek Ajera</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>C’est une page produit générale de Deltek Ajera, sans information s spécifique ou directement applicable à ArchiFact ou SiteNote. Aucun changem changement réglementaire, technique ou fonctionnel identifié.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact sur ArchiFact, SiteNote, stack ou coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Aucune</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="222" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="222" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="222" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="222" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="222" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.deltek.com/en/products/project-erp/ajera" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:10.002740</span>
       </div>
     </article>
     
@@ -5557,6 +5790,75 @@
       </div>
     
 
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>Lecture</h3>
+            <p>Informations de contexte sans action immédiate.</p>
+          </div>
+          <span class="badge ok">LECTURE · 1</span>
+        </div>
+
+        
+    <article class="item read-item" data-item-id="214">
+      <div class="item-top">
+        <div>
+          <span class="source">CSTB Actualites</span>
+          <div class="mini-meta">
+            <span>SiteNote</span>
+            <span>documents_plans</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>CSTB - Le futur en construction</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette source présente une vision stratégique du CSTB sur les domain domaines d&#x27;activité liés au bâtiment et au climat, sans contenu spécifique ou directement applicable à ArchiFact ou SiteNote. Elle sert davantage à la la culture et à la compréhension du paysage institutionnel.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible, pas d’impact direct sur les produits, la stack ou les proce processus de JD</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Archiver dans une base de connaissances pour référence future si si nécessaire</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="214" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="214" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="214" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="214" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="214" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.cstb.fr" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:04.602927</span>
+      </div>
+    </article>
+    
+      </div>
+    
 
     </section>
     
@@ -5579,7 +5881,7 @@
             <h3>À tester</h3>
             <p>Nouveautés à expérimenter sans engagement lourd.</p>
           </div>
-          <span class="badge watch">TESTER · 10</span>
+          <span class="badge watch">TESTER · 16</span>
         </div>
 
         
@@ -5757,6 +6059,64 @@
     </article>
     
 
+    <article class="item test-item" data-item-id="204">
+      <div class="item-top">
+        <div>
+          <span class="source">Windsurf Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Blog | Devin</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’évolution de Windsurf vers un IDE complet avec gestion d’agents l locaux et cloud, ainsi que des améliorations IA (Opus 4.7, Adaptive model r router), pourrait offrir des opportunités d’automatisation et d’optimisatio d’optimisation du développement local, notamment en lien avec les outils IA IA de JD (Ollama, Qwen3, Mixtral). Cela mérite une exploration pour voir si si cela peut enrichir le workflow de développement ou l’IA locale.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Tester les fonctionnalités récentes de Windsurf (Agent Command Cent Center, Devin Desktop, Adaptive model router) avec un petit projet de dével développement interne ou dans un contexte IA local.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Potentiel gain de productivité, amélioration du workflow de dev, po potentiel d’intégration dans l’IA locale pour ArchiFact/SiteNote.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un petit prototype ou test d’intégration de Windsurf avec les outils locaux (Ollama/Qwen3) pour évaluer les performances et la compat compatibilité.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="204" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="204" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="204" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="204" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="204" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://windsurf.com/blog" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:01.192871</span>
+      </div>
+    </article>
+    
+
     <article class="item test-item" data-item-id="272">
       <div class="item-top">
         <div>
@@ -5927,6 +6287,238 @@
       <div class="item-footer">
         <a class="source-link" href="https://cursor.com/blog/composer-2-5" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
         <span class="analyzed-at">Analysé : 2026-06-07T18:37:22.744445</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="282">
+      <div class="item-top">
+        <div>
+          <span class="source">Windsurf Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Windsurf is now Devin Desktop | Devin</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette annonce présente une évolution majeure de Windsurf vers Devin Devin Desktop, avec un focus sur la gestion centralisée des agents IA via u une interface Kanban et un protocole ouvert (ACP). Cela pourrait améliorer l’automatisation et la productivité pour les développeurs, mais n’a pas enc encore d’impact direct ou immédiat sur ArchiFact ou SiteNote.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer Devin Desktop dans l’environnement de développement local pour évaluer son potentiel d’intégration avec les outils IA existants (Qwen (Qwen3, Mixtral, Ollama).</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Potentiel gain de productivité et amélioration de l’automatisation du dev, mais pas d’impact direct sur les produits ou la stack actuelle.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Télécharger Devin Desktop et tester une première intégration ave avec un agent local (ex : Qwen3 via Ollama).</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="282" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="282" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="282" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="282" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="282" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://windsurf.com/blog/windsurf-is-now-devin-desktop" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:13.620420</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="283">
+      <div class="item-top">
+        <div>
+          <span class="source">Windsurf Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Fast and Comprehensive Code Review, Now in Windsurf | Devin</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette annonce présente un outil d&#x27;automatisation de review de code (Devin Review) intégré à Windsurf, avec un modèle local SWE-check. Cela pou pourrait améliorer l’efficacité du développement, réduire la dette techniqu technique et accélérer les cycles de déploiement, notamment pour les module modules SaaS d’ArchiFact et SiteNote.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer une démo ou un test fonctionnel de Devin Review dans le pr processus de développement local</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de la productivité dev, réduction de la dette techniqu technique, potentiel gain sur le temps de déploiement</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Configurer un test pilote avec un petit module de ArchiFact ou S SiteNote pour évaluer l’efficacité du review automatisé</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="283" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="283" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="283" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="283" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="283" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://windsurf.com/blog/devin-review-windsurf" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:14.918478</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="284">
+      <div class="item-top">
+        <div>
+          <span class="source">Windsurf Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Windsurf 2.0: Introducing the Agent Command Center and Devin in Windsurf | Devin</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette mise à jour de Windsurf introduit des fonctionnalités avancée avancées liées aux agents autonomes et à la gestion de fleets d&#x27;agents, ce qui pourrait améliorer l’automatisation du développement, notamment dans le le cadre de l’IA locale. Cela mérite une exploration pour voir si cela peut peut être intégré ou adapté à l’environnement de JD (supabase, Ollama, Qwen Qwen3, Mixtral).</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Tester l&#x27;Agent Command Center et Devin dans un contexte de développ développement local avec les outils existants (Ollama, Qwen3, etc.)</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Potentiel gain de productivité, amélioration de l’automatisation du du dev, potentiel d’intégration IA locale</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un petit prototype ou test de simulation d’un agent autono autonomes dans Windsurf avec les outils actuels (Ollama + Qwen3)</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="284" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="284" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="284" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="284" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="284" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://windsurf.com/blog/windsurf-2-0" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:16.343906</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="285">
+      <div class="item-top">
+        <div>
+          <span class="source">Windsurf Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Introducing Adaptive: a smarter way to use Windsurf | Devin</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette mise à jour de Windsurf introduit un routeur d’IA adaptatif q qui pourrait améliorer l’efficacité et réduire les coûts d’utilisation des modèles IA. Cela a un potentiel direct sur l’automatisation, la gestion des des ressources et l’optimisation des coûts liés à l’IA locale, notamment po pour les développements futurs de JD.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer et tester le routeur adaptatif dans les workflows d’IA loc locale pour évaluer ses performances par rapport aux modèles actuels (Qwen3 (Qwen3, Mixtral).</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de l’efficacité IA, réduction des coûts de traitement, traitement, potentiel d’optimisation du budget IA local.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Configurer un test avec le routeur adaptatif sur une tâche spéci spécifique (ex. génération de contenu, analyse de documents) et comparer le les coûts et performances.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="285" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="285" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="285" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="285" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="285" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://windsurf.com/blog/windsurf-adaptive" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:17.810594</span>
       </div>
     </article>
     
@@ -6159,6 +6751,64 @@
       <div class="item-footer">
         <a class="source-link" href="https://cursor.com/blog/typescript-sdk" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
         <span class="analyzed-at">Analysé : 2026-06-13T12:55:34.942157</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="482">
+      <div class="item-top">
+        <div>
+          <span class="source">Cursor Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Governing agent autonomy with Auto-review · Cursor</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’article présente une approche innovante pour gérer l’autonomie de des agents IA, notamment en ce qui concerne la sécurité et la prise de déci décision automatisée. Cela peut s&#x27;appliquer à l’automatisation locale dans les outils de développement de JD, notamment avec les capacités d’IA locale locale déjà présentes (Ollama, Qwen3, Mixtral).</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Expérimenter l’intégration d’un mécanisme de « Auto-review » dans l les workflows locaux pour automatiser certaines tâches sans compromettre la la sécurité.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de l’automatisation locale, réduction des risques liés liés aux actions non supervisées, potentiel gain de productivité sur le dev dev.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un prototype de classification d’actions via un agent loca local pour évaluer les risques avant exécution.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="482" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="482" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="482" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="482" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="482" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://cursor.com/blog/agent-autonomy-auto-review" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:10:59.569277</span>
       </div>
     </article>
     
@@ -7004,9 +7654,6 @@
     </section>
     
 
-
-
-
     <section class="section tab-content" data-tab="ia_ecosysteme">
       <div class="section-header">
         <div>
@@ -7094,7 +7741,7 @@
             <h3>À tester</h3>
             <p>Nouveautés à expérimenter sans engagement lourd.</p>
           </div>
-          <span class="badge watch">TESTER · 14</span>
+          <span class="badge watch">TESTER · 15</span>
         </div>
 
         
@@ -7736,6 +8383,64 @@
     </article>
     
 
+    <article class="item test-item" data-item-id="286">
+      <div class="item-top">
+        <div>
+          <span class="source">Anthropic News</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>modeles</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Introducing Claude Opus 4.8 \ Anthropic</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;annonce de la version 4.8 de Claude Opus par Anthropic introduit des améliorations significatives, notamment en termes de vitesse, d&#x27;efficac d&#x27;efficacité et de nouvelles fonctionnalités comme les &quot;dynamic workflows&quot; pour Claude Code. Cela pourrait avoir un impact positif sur le développemen développement local d’IA, l’automatisation des tâches récurrentes ou l’amél l’amélioration de l’expérience utilisateur dans les produits ArchiFact et S SiteNote si ces outils sont intégrés.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer Claude Opus 4.8 dans un environnement de test local pour é évaluer son utilité dans les workflows actuels (ex : génération de document documents, automatisation de tâches récurrentes).</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration potentielle de l&#x27;automatisation, productivité et poten potentiellement du développement IA locale, sans risque immédiat.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Configurer un test d’intégration rapide de Claude Opus 4.8 via O Ollama ou Qwen3_Coder_30b pour évaluer la performance sur des cas concrets liés à ArchiFact ou SiteNote.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="286" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="286" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="286" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="286" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="286" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:19.543048</span>
+      </div>
+    </article>
+    
+
     <article class="item test-item" data-item-id="299">
       <div class="item-top">
         <div>
@@ -7918,7 +8623,7 @@
             <h3>À surveiller</h3>
             <p>Sujets utiles mais encore incertains.</p>
           </div>
-          <span class="badge watch">SURVEILLER · 3</span>
+          <span class="badge watch">SURVEILLER · 6</span>
         </div>
 
         
@@ -7976,6 +8681,122 @@
       <div class="item-footer">
         <a class="source-link" href="https://docs.mistral.ai/resources/changelogs" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
         <span class="analyzed-at">Analysé : 2026-06-06T22:29:32.186731</span>
+      </div>
+    </article>
+    
+
+    <article class="item watch-item" data-item-id="211">
+      <div class="item-top">
+        <div>
+          <span class="source">Open WebUI Blog</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>local_ai</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>Blog • Open WebUI</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’information provient d’un blog sur Open WebUI, qui traite de l’éc l’écosystème local AI, notamment avec des sujets comme les modèles locaux, l’infrastructure, et les intégrations avec des outils comme OpenRouter ou N NVIDIA. Cela peut être utile pour une meilleure compréhension du paysage IA IA locale, mais aucune action immédiate n’est requise pour ArchiFact ou Sit SiteNote.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Suivre régulièrement les évolutions de l’écosystème local AI via Op Open WebUI pour identifier des opportunités potentielles.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible impact direct sur les produits, mais potentiellement utile p pour le développement IA locale dans le futur.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un dossier de veille sur Open WebUI et ses évolutions IA l locales, à revisiter tous les mois.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="211" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="211" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="211" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="211" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="211" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://openwebui.com/blog" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:03.663303</span>
+      </div>
+    </article>
+    
+
+    <article class="item watch-item" data-item-id="287">
+      <div class="item-top">
+        <div>
+          <span class="source">Anthropic News</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>modeles</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>Expanding Project Glasswing \ Anthropic</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’annonce d’Anthropic sur Project Glasswing est intéressante pour l la sécurité logicielle et l’IA, mais elle n’implique pas encore d&#x27;action co concrète immédiate pour ArchiFact ou SiteNote. Elle mérite une surveillance surveillance pour potentielles évolutions futures liées à la sécurité des o outils internes ou à l’intégration d’IA locale.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Suivre les évolutions de Project Glasswing et ses impacts sur les f fournisseurs de logiciels critiques</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Potentiel impact sur la sécurité technique et la réduction de la de dette technique si des solutions similaires deviennent disponibles pour les les outils internes ou les intégrations IA</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un ticket de veille sur les avancées de Project Glasswing dans 3 mois pour évaluer l’intégration potentielle à la stack locale</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="287" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="287" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="287" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="287" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="287" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.anthropic.com/news/expanding-project-glasswing" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:20.944224</span>
       </div>
     </article>
     
@@ -8095,12 +8916,401 @@
       </div>
     </article>
     
+
+    <article class="item watch-item" data-item-id="205">
+      <div class="item-top">
+        <div>
+          <span class="source">Anthropic News</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>modeles</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 5</span>
+      </div>
+
+      <h3>Newsroom \ Anthropic</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’information provient d’une page de presse générale d&#x27;Anthropic, s sans changement concret ou impact direct sur les produits ArchiFact ou Site SiteNote. Les annonces concernent des mises à jour de modèles et des initia initiatives éthiques, mais pas de fonctionnalités applicables immédiatement immédiatement.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible, pas d’impact direct sur les fonctionnalités, la stack ou le les coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre les évolutions techniques des modèles Claude, notamment p pour les tâches agentic et de codage, dans 3 à 6 mois.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="205" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="205" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="205" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="205" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="205" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:02.288828</span>
+      </div>
+    </article>
+    
       </div>
     
 
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>Lecture</h3>
+            <p>Informations de contexte sans action immédiate.</p>
+          </div>
+          <span class="badge ok">LECTURE · 1</span>
+        </div>
+
+        
+    <article class="item read-item" data-item-id="288">
+      <div class="item-top">
+        <div>
+          <span class="source">Anthropic News</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>modeles</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>Anthropic co-founder Chris Olah&#x27;s remarks on Pope Leo XIV&#x27;s encyclical &quot;Magnifica humanitas&quot; \ Anthropic</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Les propos du co-fondateur d&#x27;Anthropic sur un encyclical papal sur l&#x27;IA sont plus une réflexion philosophique et spirituelle que des informati informations applicables ou urgentes pour le développement technique ou rég réglementaire de ArchiFact ou SiteNote. Cela peut inspirer une réflexion su sur l&#x27;éthique de l&#x27;IA, mais ne justifie pas d&#x27;action concrète.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible, purely culturel et thématique</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Consulter le contenu pour enrichissement de la veille éthique, s sans action immédiate</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="288" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="288" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="288" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="288" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="288" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:22.016479</span>
+      </div>
+    </article>
+    
+      </div>
+    
 
     </section>
     
+
+    <section class="section tab-content" data-tab="business_saas">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Bloc de veille</p>
+          <h2>Business</h2>
+          <p class="section-intro">Informations liées au marché SaaS, pricing, acquisition, concurrence, distribution et opportunités commerciales.</p>
+        </div>
+        <span class="badge ok">30 signal(s)</span>
+      </div>
+
+      
+
+
+
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>Lecture</h3>
+            <p>Informations de contexte sans action immédiate.</p>
+          </div>
+          <span class="badge ok">LECTURE · 4</span>
+        </div>
+
+        
+    <article class="item read-item" data-item-id="215">
+      <div class="item-top">
+        <div>
+          <span class="source">SaaStr</span>
+          <div class="mini-meta">
+            <span>Business</span>
+            <span>acquisition</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 4</span>
+      </div>
+
+      <h3>SaaStrAI | B2B + AI Community, Events, Leads</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article présente des éléments généraux sur les tendances AI et les pratiques de marketing SaaS, sans impact direct ni action spécifique re requis pour ArchiFact ou SiteNote. Il est plus orienté culturelle et inspir inspirante qu’opérationnelle.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible, principalement culturel et d’inspiration pour le marché</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre les tendances AI dans le secteur de la construction via d des sources plus ciblées</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="215" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="215" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="215" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="215" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="215" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.saastr.com" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:05.505401</span>
+      </div>
+    </article>
+    
+
+    <article class="item read-item" data-item-id="216">
+      <div class="item-top">
+        <div>
+          <span class="source">Lenny Newsletter</span>
+          <div class="mini-meta">
+            <span>Business</span>
+            <span>retention</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>Lenny&#x27;s Newsletter | Substack</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article présente un ensemble de contenus généraux et marketing liés à la productivité, l&#x27;IA et les tendances SaaS. Il ne contient aucune i information spécifique ou urgente applicable directement à ArchiFact ou Sit SiteNote, ni aucun changement réglementaire ou technique impactful.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact direct sur les produits, la stack ou les coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Archiver pour suivi occasionnel si inspiration utile.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="216" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="216" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="216" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="216" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="216" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.lennysnewsletter.com" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:06.434073</span>
+      </div>
+    </article>
+    
+
+    <article class="item read-item" data-item-id="217">
+      <div class="item-top">
+        <div>
+          <span class="source">Indie Hackers</span>
+          <div class="mini-meta">
+            <span>Business</span>
+            <span>go_to_market</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>Indie Hackers: Work Together to Build Profitable Online Businesses</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Contenu générique sur les stratégies de croissance et de vente de S SaaS, sans impact direct ni action concrète applicable à ArchiFact ou SiteN SiteNote.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact sur les produits, la stack ou les coûts</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre les tendances marketing via des sources plus ciblées et r réglementaires</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="217" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="217" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="217" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="217" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="217" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.indiehackers.com" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:07.214792</span>
+      </div>
+    </article>
+    
+
+    <article class="item read-item" data-item-id="218">
+      <div class="item-top">
+        <div>
+          <span class="source">Paddle Blog</span>
+          <div class="mini-meta">
+            <span>Business</span>
+            <span>pricing</span>
+            <span>Priorité Moyenne</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>Paddle - Blog</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Le contenu du blog Paddle est générique, regroupe plusieurs sujets sans cibler spécifiquement ArchiFact ou SiteNote. Il s&#x27;agit d&#x27;une source d&#x27; d&#x27;inspiration générale pour le marché SaaS, mais ne présente pas d&#x27;action c concrète ni d&#x27;impact direct sur les produits ou la stack de JD.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact direct sur ArchiFact, SiteNote, la stack ou les coûts. coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre régulièrement les actualités SaaS pour identifier des ten tendances potentielles à surveiller.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="218" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="218" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="218" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="218" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="218" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.paddle.com/blog" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T14:11:08.265040</span>
+      </div>
+    </article>
+    
+      </div>
+    
+
+    </section>
+    
+
       </div>
 
       <aside class="side-panel">
@@ -8131,8 +9341,8 @@
           <p class="section-kicker">Indicateurs</p>
           <h2>Vue rapide</h2>
           <ul class="priority-list">
-            <li><span class="rank">A</span><span>Score moyen : <strong>6.4/10</strong></span></li>
-            <li><span class="rank">B</span><span>Lecture : <strong>7</strong> item(s)</span></li>
+            <li><span class="rank">A</span><span>Score moyen : <strong>6.2/10</strong></span></li>
+            <li><span class="rank">B</span><span>Lecture : <strong>14</strong> item(s)</span></li>
             <li><span class="rank">C</span><span>Total analysé : <strong>201</strong> item(s)</span></li>
           </ul>
         </section>
