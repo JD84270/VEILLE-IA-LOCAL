@@ -15,7 +15,7 @@ BLOCK_ORDER = [
     "archifact",
     "sitenote",
     "ia_automatisation_saas",
-    "ia_locale_ecosysteme",
+    "ia_cosysteme",
     "business_saas",
     "signaux_faibles",
 ]
@@ -116,13 +116,13 @@ def block_label(block):
     block = safe(block, "non_classe").lower().strip()
 
     labels = {
-        "stack_technique": "Stack technique",
+        "stack_technique": "Stack",
         "archifact": "ArchiFact",
         "sitenote": "SiteNote",
-        "ia_automatisation_saas": "IA automatisation SaaS",
-        "ia_locale_ecosysteme": "IA locale & écosystème",
-        "business_saas": "Business SaaS",
-        "signaux_faibles": "Signaux faibles",
+        "ia_automatisation_saas": "IA SaaS",
+        "ia_ecosysteme": "IA locale",
+        "business_saas": "Business",
+        "signaux_faibles": "Signaux",
     }
 
     return labels.get(block, block.replace("_", " ").title())
@@ -136,7 +136,7 @@ def block_intro(block):
         "archifact": "Signaux utiles pour le produit ArchiFact : facturation, honoraires, PDF, SaaS métier, conformité et automatisation.",
         "sitenote": "Signaux utiles pour SiteNote : suivi de chantier, réserves, OPR, terrain, CR, mobilité et ergonomie métier.",
         "ia_automatisation_saas": "Automatisations IA applicables à tes produits SaaS, aux workflows métier et à la productivité.",
-        "ia_locale_ecosysteme": "Évolutions de l’IA locale, des modèles open source, de l’infrastructure et des usages hors cloud.",
+        "ia_ecosysteme": "Évolutions de l’IA locale, des modèles open source, de l’infrastructure et des usages hors cloud.",
         "business_saas": "Informations liées au marché SaaS, pricing, acquisition, concurrence, distribution et opportunités commerciales.",
         "signaux_faibles": "Indices émergents, mouvements de fond ou informations encore incertaines mais potentiellement importantes.",
     }
@@ -283,7 +283,7 @@ def render_section(block, rows):
         return ""
 
     return f"""
-    <section class="section">
+    <section class="section tab-content" data-tab="{escape(block)}">
       <div class="section-header">
         <div>
           <p class="section-kicker">Bloc de veille</p>
@@ -307,6 +307,94 @@ def render_unknown_blocks(rows):
     })
 
     return "\n".join(render_section(block, rows) for block in blocks)
+
+
+
+def rows_for_block(rows, block):
+    return [row for row in rows if safe(row[3]).lower().strip() == block]
+
+
+def get_visible_blocks(rows):
+    known = []
+
+    for block in BLOCK_ORDER:
+        if rows_for_block(rows, block):
+            known.append(block)
+
+    unknown = sorted({
+        safe(row[3]).lower().strip()
+        for row in rows
+        if safe(row[3]).lower().strip()
+        and safe(row[3]).lower().strip() not in set(BLOCK_ORDER)
+    })
+
+    return known + unknown
+
+
+def count_by_block(rows, block):
+    return len(rows_for_block(rows, block))
+
+
+def render_tabs(rows):
+    blocks = get_visible_blocks(rows)
+
+    html = """
+    <nav class="tabs" aria-label="Navigation des blocs de veille">
+      <button class="tab-btn active" data-target="dashboard">Dashboard</button>
+    """
+
+    for block in blocks:
+        count = count_by_block(rows, block)
+        html += f"""
+      <button class="tab-btn" data-target="{escape(block)}">{escape(block_label(block))} <span>{count}</span></button>
+        """
+
+    html += """
+    </nav>
+    """
+
+    return html
+
+
+def top_items_by_decision(rows, decision, limit=5):
+    filtered = [row for row in rows if row[8] == decision]
+    filtered.sort(key=lambda r: (r[9] or 0), reverse=True)
+    return filtered[:limit]
+
+
+def render_dashboard_section(rows):
+    groups = []
+
+    for decision in ["AGIR", "TESTER", "SURVEILLER"]:
+        items = top_items_by_decision(rows, decision, limit=5)
+        if items:
+            groups.append(render_decision_group(decision, items))
+
+    groups_html = "\n".join(groups)
+
+    if not groups_html.strip():
+        groups_html = """
+        <div class="empty-state">
+          Aucun signal prioritaire détecté pour le moment.
+        </div>
+        """
+
+    return f"""
+    <section class="section tab-content active" data-tab="dashboard">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Vue synthèse</p>
+          <h2>Dashboard</h2>
+          <p class="section-intro">
+            Synthèse courte des signaux les plus importants. Les onglets permettent ensuite d’ouvrir chaque bloc sans scroller toute la veille.
+          </p>
+        </div>
+        <span class="badge ok">Top priorités</span>
+      </div>
+
+      {groups_html}
+    </section>
+    """
 
 
 def top_items(rows, limit=3):
@@ -349,15 +437,22 @@ def main():
     average = avg_score(rows)
     signal = signal_score(rows)
 
-    sections_html = "\n".join(
+    sections_html = render_dashboard_section(rows)
+
+    block_sections_html = "\n".join(
         render_section(block, rows)
         for block in BLOCK_ORDER
     )
+
+    if block_sections_html:
+        sections_html += "\n" + block_sections_html
 
     extra_sections_html = render_unknown_blocks(rows)
 
     if extra_sections_html:
         sections_html += "\n" + extra_sections_html
+
+    tabs_html = render_tabs(rows)
 
     html = f"""<!DOCTYPE html>
 <html lang="fr">
@@ -534,6 +629,71 @@ def main():
       font-size: 13px;
       color: var(--muted);
       letter-spacing: 0;
+    }}
+
+    .tabs {{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 12px;
+      margin: 0 0 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(31,36,48,0.05);
+      backdrop-filter: blur(14px);
+      overflow: hidden;
+    }}
+
+    .tab-btn {{
+      flex: 0 0 auto;
+      border: 0;
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #e4e7f0;
+      color: #525a6c;
+      font-size: 13px;
+      font-weight: 850;
+      white-space: nowrap;
+    }}
+
+    .tab-btn span {{
+      margin-left: 5px;
+      color: var(--muted);
+      font-weight: 850;
+    }}
+
+    .tab-btn.active {{
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 10px 22px rgba(109,97,236,0.22);
+    }}
+
+    .tab-btn.active span {{
+      color: rgba(255,255,255,0.82);
+    }}
+
+    .tab-content {{
+      display: none;
+    }}
+
+    .tab-content.active {{
+      display: block;
+    }}
+
+    .empty-state {{
+      padding: 22px;
+      border-radius: 24px;
+      background: var(--paper-soft);
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      font-weight: 750;
     }}
 
     .layout {{
@@ -920,6 +1080,8 @@ def main():
       </article>
     </section>
 
+    {tabs_html}
+
     <div class="layout">
       <div>
         {sections_html}
@@ -961,6 +1123,28 @@ def main():
 
   </main>
     <script>
+    document.querySelectorAll(".tab-btn").forEach((button) => {{
+      button.addEventListener("click", () => {{
+        const target = button.dataset.target;
+
+        document.querySelectorAll(".tab-btn").forEach((btn) => {{
+          btn.classList.remove("active");
+        }});
+
+        document.querySelectorAll(".tab-content").forEach((section) => {{
+          section.classList.remove("active");
+        }});
+
+        button.classList.add("active");
+
+        const activeSection = document.querySelector(`.tab-content[data-tab="${{target}}"]`);
+        if (activeSection) {{
+          activeSection.classList.add("active");
+          window.scrollTo({{ top: 0, behavior: "smooth" }});
+        }}
+      }});
+    }});
+
     document.querySelectorAll(".card-actions button").forEach((button) => {{
       button.addEventListener("click", async () => {{
         const id = button.dataset.id;

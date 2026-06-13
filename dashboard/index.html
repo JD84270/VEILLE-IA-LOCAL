@@ -175,6 +175,71 @@
       letter-spacing: 0;
     }
 
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 12px;
+      margin: 0 0 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(31,36,48,0.05);
+      backdrop-filter: blur(14px);
+      overflow: hidden;
+    }
+
+    .tab-btn {
+      flex: 0 0 auto;
+      border: 0;
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #e4e7f0;
+      color: #525a6c;
+      font-size: 13px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .tab-btn span {
+      margin-left: 5px;
+      color: var(--muted);
+      font-weight: 850;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 10px 22px rgba(109,97,236,0.22);
+    }
+
+    .tab-btn.active span {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .empty-state {
+      padding: 22px;
+      border-radius: 24px;
+      background: var(--paper-soft);
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      font-weight: 750;
+    }
+
     .layout {
       display: grid;
       grid-template-columns: 1fr 340px;
@@ -523,16 +588,16 @@
         </p>
 
         <div class="meta-row">
-          <span class="pill">Monday 08 June 2026</span>
-          <span class="pill">Dernière analyse : 08/06/2026 19:55</span>
-          <span class="pill">188 sources analysées</span>
+          <span class="pill">Saturday 13 June 2026</span>
+          <span class="pill">Dernière analyse : 13/06/2026 12:55</span>
+          <span class="pill">201 sources analysées</span>
           <span class="pill">Mode local</span>
         </div>
       </div>
 
       <aside class="score-card">
         <span>Signal utile</span>
-        <strong>44</strong>
+        <strong>48</strong>
         <small>score journalier</small>
       </aside>
     </header>
@@ -545,31 +610,973 @@
 
       <article class="kpi">
         <span class="label">À tester</span>
-        <div class="value">34 <small>items</small></div>
+        <div class="value">43 <small>items</small></div>
       </article>
 
       <article class="kpi watch">
         <span class="label">À surveiller</span>
-        <div class="value">41 <small>items</small></div>
+        <div class="value">45 <small>items</small></div>
       </article>
 
       <article class="kpi ignore">
         <span class="label">Ignorés</span>
-        <div class="value">3 <small>items</small></div>
+        <div class="value">5 <small>items</small></div>
       </article>
     </section>
+
+    
+    <nav class="tabs" aria-label="Navigation des blocs de veille">
+      <button class="tab-btn active" data-target="dashboard">Dashboard</button>
+    
+      <button class="tab-btn" data-target="stack_technique">Stack <span>34</span></button>
+        
+      <button class="tab-btn" data-target="archifact">ArchiFact <span>48</span></button>
+        
+      <button class="tab-btn" data-target="sitenote">SiteNote <span>23</span></button>
+        
+      <button class="tab-btn" data-target="ia_automatisation_saas">IA SaaS <span>31</span></button>
+        
+      <button class="tab-btn" data-target="business_saas">Business <span>30</span></button>
+        
+      <button class="tab-btn" data-target="signaux_faibles">Signaux <span>4</span></button>
+        
+      <button class="tab-btn" data-target="ia_ecosysteme">IA locale <span>31</span></button>
+        
+    </nav>
+    
 
     <div class="layout">
       <div>
         
-    <section class="section">
+    <section class="section tab-content active" data-tab="dashboard">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Vue synthèse</p>
+          <h2>Dashboard</h2>
+          <p class="section-intro">
+            Synthèse courte des signaux les plus importants. Les onglets permettent ensuite d’ouvrir chaque bloc sans scroller toute la veille.
+          </p>
+        </div>
+        <span class="badge ok">Top priorités</span>
+      </div>
+
+      
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>À traiter</h3>
+            <p>Actions concrètes ou arbitrages rapides.</p>
+          </div>
+          <span class="badge critical">AGIR · 5</span>
+        </div>
+
+        
+    <article class="item action-item" data-item-id="196">
+      <div class="item-top">
+        <div>
+          <span class="source">DGFIP Facturation Electronique</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision action">AGIR · score 9</span>
+      </div>
+
+      <h3>Je passe à la facturation électronique |impots.gouv.fr</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>La généralisation de la facturation électronique à compter du 1er s septembre 2026 est une réforme réglementaire obligatoire avec un impact dir direct sur ArchiFact (module de facturation électronique). Cela touche la c conformité, la production et les coûts liés à l’adaptation technique.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Vérifier immédiatement si les fonctionnalités actuelles de ArchiFac ArchiFact respectent les normes de facturation électronique en vigueur et p préparer une mise à jour si nécessaire.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Risque de non-conformité, impact sur la facturation électronique d’ d’ArchiFact, nécessité de migration technique ou d’intégration avec des pla plateformes agréées.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Identifier les exigences techniques de la facturation électroniq électronique à partir du 1er septembre 2026 et évaluer l’alignement avec le les modules actuels d’ArchiFact.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="196" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="196" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="196" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="196" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="196" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T20:54:07.407585</span>
+      </div>
+    </article>
+    
+
+    <article class="item action-item" data-item-id="197">
+      <div class="item-top">
+        <div>
+          <span class="source">DGFIP Plateformes Agreees</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision action">AGIR · score 9</span>
+      </div>
+
+      <h3>Facturation électronique et plateformes agréées | impots.gouv.fr</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;information concerne une obligation réglementaire majeure pour le les entreprises assujetties, avec une date de mise en œuvre fixée au 1er se septembre 2026. Cela impacte directement la fonctionnalité &quot;facturation éle électronique&quot; d&#x27;ArchiFact, nécessitant une action immédiate pour éviter un risque de non-conformité et garantir la continuité de service.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer une analyse de conformité sur les plateformes agréées dans dans le module &quot;facturation électronique&quot; d’ArchiFact avant le 1er septembr septembre 2026.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Impact majeur sur la conformité réglementaire, risque de production production, coûts liés à la migration ou à l’adaptation technique, et poten potentiel impact commercial si ArchiFact n’est pas prêt.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Identifier les plateformes agréées compatibles avec la stack act actuelle et évaluer leur intégration dans le module ArchiFact &quot;facturation électronique&quot;.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="197" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="197" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="197" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="197" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="197" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T20:54:08.825745</span>
+      </div>
+    </article>
+    
+
+    <article class="item action-item" data-item-id="252">
+      <div class="item-top">
+        <div>
+          <span class="source">DGFIP Facturation Electronique</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision action">AGIR · score 9</span>
+      </div>
+
+      <h3>Je découvre la facturation électronique |impots.gouv.fr</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>La facturation électronique est un sujet réglementaire critique qui qui impacte directement la conformité et les coûts d&#x27;ArchiFact. L’obligatio L’obligation de transmission des données à l’administration via une platefo plateforme dédiée impose une action immédiate pour éviter des risques de no non-conformité ou des coûts supplémentaires liés à une mauvaise mise en œuv œuvre.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer une fonctionnalité de génération et de transmission de fac factures électroniques dans ArchiFact, en veillant à respecter les normes e e-reporting.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Impact majeur sur la conformité réglementaire, réduction du risque de non-conformité, gain de temps pour les utilisateurs et potentiel coût su supplémentaire si non intégré maintenant.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Identifier les standards de transmission e-reporting (ex. : XML, XML, API) et commencer l’analyse technique d’intégration dans le module fac facturation électronique d&#x27;ArchiFact.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="252" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="252" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="252" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="252" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="252" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.impots.gouv.fr/professionnel/je-decouvre-la-facturation-electronique" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T21:50:07.738264</span>
+      </div>
+    </article>
+    
+
+    <article class="item action-item" data-item-id="253">
+      <div class="item-top">
+        <div>
+          <span class="source">DGFIP Facturation Electronique</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision action">AGIR · score 9</span>
+      </div>
+
+      <h3>La facturation électronique, qu&#x27;est-ce que ça change pour moi ? |impots.gouv.fr</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>La réforme de la facturation électronique impose des obligations fi fiscales nouvelles pour les entreprises, ce qui impacte directement la conf conformité et la gestion comptable. Cela peut nécessiter une mise à jour de des fonctionnalités de facturation électronique dans ArchiFact.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer une analyse des impacts réglementaires sur la facturation électronique dans ArchiFact, et vérifier si les fonctionnalités actuelles r respectent les nouvelles obligations.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Risque de non-conformité, impact sur la gestion comptable et la pro productivité des utilisateurs.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Réaliser une revue technique de la module facturation électroniq électronique pour s&#x27;assurer de la conformité réglementaire.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="253" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="253" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="253" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="253" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="253" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.impots.gouv.fr/professionnel/la-facturation-electronique-quest-ce-que-ca-change-pour-moi" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T21:50:08.825633</span>
+      </div>
+    </article>
+    
+
+    <article class="item action-item" data-item-id="255">
+      <div class="item-top">
+        <div>
+          <span class="source">DGFIP Facturation Electronique</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision action">AGIR · score 9</span>
+      </div>
+
+      <h3>Je consulte la liste des plateformes agréées | impots.gouv.fr</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>La liste des plateformes agréées est critique car elle détermine le les fournisseurs compatibles avec la réforme fiscale en cours. Cela impacte impacte directement la conformité réglementaire et la capacité d&#x27;ArchiFact à intégrer la facturation électronique dans ses fonctionnalités, sans quoi un risque de non-conformité existe.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Vérifier immédiatement si les plateformes listées sont compatibles avec notre stack actuel (Supabase, Stripe) et identifier celles qui peuvent peuvent être intégrées à ArchiFact.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Impact majeur sur la conformité réglementaire, la capacité de factu facturation électronique d’ArchiFact et potentiellement la migration obliga obligatoire des clients vers une nouvelle infrastructure.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Identifier 3 plateformes agréées compatibles avec Supabase et St Stripe, puis créer un cahier des charges pour l’intégration technique.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="255" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="255" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="255" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="255" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="255" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T21:50:11.410253</span>
+      </div>
+    </article>
+    
+      </div>
+    
+
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>À tester</h3>
+            <p>Nouveautés à expérimenter sans engagement lourd.</p>
+          </div>
+          <span class="badge watch">TESTER · 5</span>
+        </div>
+
+        
+    <article class="item test-item" data-item-id="207">
+      <div class="item-top">
+        <div>
+          <span class="source">Ollama Blog</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>local_ai</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 9</span>
+      </div>
+
+      <h3>Blog · Ollama</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette source traite de l’évolution d’Ollama, un outil clé pour le d développement local d’IA utilisé dans la stack de JD. Les améliorations de performance, compatibilité GGUF, support MLX sur Apple Silicon et intégrati intégration de fonctionnalités comme les agents subagents ou recherche web sont directement applicables à l’amélioration de l’IA locale pour ArchiFact ArchiFact et SiteNote.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer les nouvelles versions d’Ollama dans l’environnement de te test local et évaluer les gains de performance et compatibilité avec les mo modèles utilisés.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Réduction du coût logiciel IA, amélioration de la puissance de trai traitement local, potentiel gain de temps sur le développement IA intégrée aux outils.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Télécharger Ollama 0.30 et tester l’exécution de modèles GGUF su sur la machine locale (RTX 4090).</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="207" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="207" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="207" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="207" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="207" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://ollama.com/blog" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T20:54:10.163770</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="278">
+      <div class="item-top">
+        <div>
+          <span class="source">Cursor Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 8</span>
+      </div>
+
+      <h3>The third era of AI software development · Cursor</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’évolution vers une troisième ère du développement logiciel avec d des agents autonomes représente une opportunité pour JD d’intégrer ou d’ada d’adapter ses outils IA locaux (comme Ollama, Qwen3, Mixtral) afin de reste rester compétitif. Cela peut améliorer l’automatisation des tâches récurren récurrentes et le développement interne.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer un agent autonome dans le workflow de développement local pour tester son impact sur l’automatisation des tâches récurrentes.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de l’automatisation, réduction de la dette technique, potentiel gain de productivité sur les modules de développement interne.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Identifier un module de ArchiFact ou SiteNote où un agent IA peu peut être testé pour générer ou réviser du code sans intervention humaine d directe.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="278" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="278" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="278" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="278" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="278" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://cursor.com/blog/third-era" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-07T18:37:21.453331</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="280">
+      <div class="item-top">
+        <div>
+          <span class="source">Cursor Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 8</span>
+      </div>
+
+      <h3>Meet the new Cursor · Cursor</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cursor 3 introduit une évolution majeure dans l’automatisation du d développement logiciel avec un espace de travail unifié pour les agents, ce ce qui peut améliorer la productivité des développeurs et potentiellement r réduire la dette technique. Cela mérite une exploration concrète pour voir si ses fonctionnalités peuvent être intégrées ou adaptées à l’écosystème de de JD.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer Cursor 3 dans un petit test pilote sur une tâche de dévelo développement non critique</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de la productivité, réduction de la dette technique, p potentiel d’automatisation des tâches récurrentes</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Télécharger Cursor 3 et créer un premier projet de test avec un module ArchiFact ou SiteNote</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="280" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="280" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="280" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="280" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="280" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://cursor.com/blog/cursor-3" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-07T18:37:23.873072</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="281">
+      <div class="item-top">
+        <div>
+          <span class="source">Cursor Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 8</span>
+      </div>
+
+      <h3>Introducing Composer 2 · Cursor</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;arrivée de Composer 2 chez Cursor représente une évolution techno technologique significative avec des améliorations de performance et un pri prix compétitif. Cela pourrait permettre d&#x27;optimiser le développement inter interne, notamment dans les tâches répétitives ou complexes liées au code, ce qui est aligné avec les objectifs de réduction de la dette technique et d’automatisation.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer Composer 2 dans l’environnement de dev local pour tester s son efficacité sur des tâches spécifiques (ex: génération de code, refacto, refacto, tests unitaires).</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration potentielle de la productivité du dev, réduction de la la dette technique, gain de temps sur les tâches récurrentes.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Configurer un test pilote avec Composer 2 sur une tâche de dével développement non critique dans l’outil local IA (ex: Ollama ou Qwen3).</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="281" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="281" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="281" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="281" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="281" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://cursor.com/blog/composer-2" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-07T18:37:25.212300</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="208">
+      <div class="item-top">
+        <div>
+          <span class="source">Ollama GitHub Releases</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>local_ai</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 8</span>
+      </div>
+
+      <h3>Releases · ollama/ollama · GitHub</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>La sortie de la version 0.30.6 d&#x27;Ollama apporte des améliorations t techniques significatives, notamment une meilleure intégration avec des age agents IA comme Oh My Pi et un gain de performance sur les embeddings Apple Apple Silicon via NVFP4. Ces évolutions peuvent améliorer l’IA locale dans le développement de JD, en particulier pour les tâches liées à la génératio génération de contenu ou à l’analyse de documents, ce qui est pertinent pou pour les deux produits.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer et tester la nouvelle version 0.30.6 d&#x27;Ollama dans l’envir l’environnement local.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de l’IA locale, potentiel gain de productivité pour le le dev, optimisation des ressources sur Apple Silicon.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Télécharger et installer la version 0.30.6 sur le serveur local avec GPU RTX 4090, puis tester les nouveaux modèles et intégrations.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="208" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="208" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="208" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="208" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="208" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T22:29:33.603969</span>
+      </div>
+    </article>
+    
+      </div>
+    
+
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>À surveiller</h3>
+            <p>Sujets utiles mais encore incertains.</p>
+          </div>
+          <span class="badge watch">SURVEILLER · 5</span>
+        </div>
+
+        
+    <article class="item watch-item" data-item-id="198">
+      <div class="item-top">
+        <div>
+          <span class="source">FNFE-MPE</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>fnfe-mpe.org – L&#x27;envol de la facture électronique</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’information provient d’une source spécialisée dans la facturation facturation électronique et les marchés publics, mais elle ne contient pas d’éléments concrets ou immédiatement applicables à ArchiFact ou SiteNote. E Elle est plus proche d’un sujet de veille réglementaire qu’une opportunité directe ou une action à entreprendre.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible, mais potentiellement stratégique dans un futur proche si de des changements réglementaires affectent les fonctionnalités de facturation facturation électronique dans les projets publics.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre les actualités du FNFE-MPE sur la facturation électroniqu électronique et les marchés publics, en particulier lors des annonces offic officielles ou réformes.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="198" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="198" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="198" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="198" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="198" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://fnfe-mpe.org" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T20:54:13.816042</span>
+      </div>
+    </article>
+    
+
+    <article class="item watch-item" data-item-id="199">
+      <div class="item-top">
+        <div>
+          <span class="source">FNFE-MPE Factur-X</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>Factur-X – fnfe-mpe.org</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette information concerne une mise à jour réglementaire sur un sta standard facturation électronique (Factur-X / ZUGFeRD 2.4) applicable à par partir de 2026. Elle est importante pour la conformité, mais l&#x27;impact sur A ArchiFact et SiteNote n&#x27;est pas immédiat ni direct.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Potentiel impact réglementaire à moyen terme sur les clients public publics ou les projets exigeant ce format.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre l&#x27;évolution de l&#x27;adoption de Factur-X par les clients et organismes publics dans les 6-12 mois à venir.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="199" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="199" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="199" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="199" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="199" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://fnfe-mpe.org/factur-x/" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T20:54:14.830768</span>
+      </div>
+    </article>
+    
+
+    <article class="item watch-item" data-item-id="254">
+      <div class="item-top">
+        <div>
+          <span class="source">DGFIP Facturation Electronique</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>J&#x27;approfondis mes connaissances sur la réforme | impots.gouv.fr</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’information traite d’une réforme réglementaire liée à la facturat facturation électronique, qui peut avoir un impact sur la conformité et la gestion des factures dans ArchiFact. Cependant, il s&#x27;agit plus d&#x27;une mise à à jour générale que d&#x27;une nouveauté immédiate ou applicable.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Suivre l’évolution réglementaire et vérifier si les nouvelles exige exigences s’appliquent aux modules de facturation électronique d’ArchiFact. d’ArchiFact.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Potentiel impact sur la conformité réglementaire et la gestion des flux de facturation pour les clients de ArchiFact.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un dossier de suivi sur la réforme à partir du 06/01/2026 et vérifier l’adéquation avec les fonctionnalités actuelles de facturation électronique d’ArchiFact.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="254" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="254" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="254" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="254" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="254" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.impots.gouv.fr/japprofondis-mes-connaissances-sur-la-reforme" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T21:50:10.098400</span>
+      </div>
+    </article>
+    
+
+    <article class="item watch-item" data-item-id="256">
+      <div class="item-top">
+        <div>
+          <span class="source">DGFIP Facturation Electronique</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>Calendrier de la réforme de la facturation électronique</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;information fait référence à un calendrier de réforme de la factu facturation électronique, ce qui est réglementaire et potentiellement impac impactant pour ArchiFact, notamment le module de facturation électronique. Cependant, il s&#x27;agit d&#x27;une source PDF non interprétable directement, donc p pas encore actionable.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Impact réglementaire potentiel sur la conformité de la facturation électronique dans ArchiFact.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Vérifier si le document est accessible en texte brut ou via un l lien partagé pour analyser les dates clés de mise en œuvre.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="256" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="256" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="256" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="256" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="256" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/calendrier_reforme_facturation_electronique_18012024.pdf.pdf" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T21:50:12.470109</span>
+      </div>
+    </article>
+    
+
+    <article class="item watch-item" data-item-id="257">
+      <div class="item-top">
+        <div>
+          <span class="source">DGFIP Plateformes Agreees</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>facturation_electronique</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>Je consulte la liste des plateformes agréées | impots.gouv.fr</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette information concerne la liste des plateformes agréées par l&#x27;a l&#x27;administration pour la facturation électronique, ce qui est pertinent pou pour ArchiFact dans le module de facturation électronique. Cependant, il s&#x27; s&#x27;agit d&#x27;une liste statique et informative, pas d&#x27;une nouveauté immédiate o ou applicable.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible à moyen, potentiellement utile pour la conformité future, ma mais pas immédiatement critique pour ArchiFact ni SiteNote.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre les mises à jour de la liste et les éventuelles modificat modifications de critères d&#x27;interopérabilité.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="257" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="257" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="257" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="257" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="257" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.impots.gouv.fr/liste-des-plateformes-de-dematerialisation-partenaires-pdp-immatriculees-sous-reserve" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-06T21:50:13.484067</span>
+      </div>
+    </article>
+    
+      </div>
+    
+    </section>
+    
+
+    <section class="section tab-content" data-tab="stack_technique">
       <div class="section-header">
         <div>
           <p class="section-kicker">Bloc de veille</p>
-          <h2>Stack technique</h2>
+          <h2>Stack</h2>
           <p class="section-intro">Sources critiques liées à l’architecture locale, aux modèles, aux frameworks, aux outils développeur et aux choix techniques.</p>
         </div>
-        <span class="badge ok">31 signal(s)</span>
+        <span class="badge ok">34 signal(s)</span>
       </div>
 
       
@@ -588,7 +1595,7 @@
         <div>
           <span class="source">Stripe Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>stripe</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -646,7 +1653,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -707,7 +1714,7 @@
             <h3>À tester</h3>
             <p>Nouveautés à expérimenter sans engagement lourd.</p>
           </div>
-          <span class="badge watch">TESTER · 16</span>
+          <span class="badge watch">TESTER · 17</span>
         </div>
 
         
@@ -716,7 +1723,7 @@
         <div>
           <span class="source">WeWeb Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>weweb</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -774,7 +1781,7 @@
         <div>
           <span class="source">Resend Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>resend</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -832,7 +1839,7 @@
         <div>
           <span class="source">WeWeb Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>weweb</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -890,7 +1897,7 @@
         <div>
           <span class="source">WeWeb Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>weweb</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -948,7 +1955,7 @@
         <div>
           <span class="source">WeWeb Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>weweb</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1006,7 +2013,7 @@
         <div>
           <span class="source">WeWeb Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>weweb</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1064,7 +2071,7 @@
         <div>
           <span class="source">WeWeb Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>weweb</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1122,7 +2129,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1180,7 +2187,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1238,7 +2245,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1296,7 +2303,7 @@
         <div>
           <span class="source">Stripe Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>stripe</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1354,7 +2361,7 @@
         <div>
           <span class="source">Stripe Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>stripe</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1412,7 +2419,7 @@
         <div>
           <span class="source">Resend Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>resend</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -1470,7 +2477,7 @@
         <div>
           <span class="source">Resend Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>resend</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -1528,7 +2535,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1586,7 +2593,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1638,6 +2645,64 @@
       </div>
     </article>
     
+
+    <article class="item test-item" data-item-id="478">
+      <div class="item-top">
+        <div>
+          <span class="source">WeWeb Changelog</span>
+          <div class="mini-meta">
+            <span>Stack</span>
+            <span>weweb</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>📣 Easier navigation and Popup management</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette mise à jour de WeWeb apporte des améliorations UX et de navig navigation qui pourraient optimiser la productivité des équipes de développ développement et de design, notamment pour la gestion des popups et la navi navigation entre pages. Cela peut avoir un impact indirect sur l’expérience l’expérience utilisateur des produits ArchiFact et SiteNote si ceux-ci util utilisent WeWeb pour certaines interfaces.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Tester les nouvelles fonctionnalités de navigation et de gestion de des popups dans un projet de démo ou prototype.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de l’expérience développeur, potentiel gain de temps d dans la maintenance et l’évolution de l’interface utilisateur.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un petit test dans un projet WeWeb pour évaluer l’impact s sur la navigation et la gestion des popups.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="478" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="478" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="478" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="478" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="478" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.weweb.io/changelog/2026-06-11" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:14.279980</span>
+      </div>
+    </article>
+    
       </div>
     
 
@@ -1647,7 +2712,7 @@
             <h3>À surveiller</h3>
             <p>Sujets utiles mais encore incertains.</p>
           </div>
-          <span class="badge watch">SURVEILLER · 13</span>
+          <span class="badge watch">SURVEILLER · 14</span>
         </div>
 
         
@@ -1656,7 +2721,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1714,7 +2779,7 @@
         <div>
           <span class="source">Supabase GitHub Releases</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -1772,7 +2837,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1830,7 +2895,7 @@
         <div>
           <span class="source">Resend Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>resend</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -1888,7 +2953,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -1946,7 +3011,7 @@
         <div>
           <span class="source">Stripe Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>stripe</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -2004,7 +3069,7 @@
         <div>
           <span class="source">Stripe Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>stripe</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -2062,7 +3127,7 @@
         <div>
           <span class="source">Resend Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>resend</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -2120,7 +3185,7 @@
         <div>
           <span class="source">Resend Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>resend</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -2178,7 +3243,7 @@
         <div>
           <span class="source">Stripe Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>stripe</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -2231,12 +3296,70 @@
     </article>
     
 
+    <article class="item watch-item" data-item-id="480">
+      <div class="item-top">
+        <div>
+          <span class="source">Resend Changelog</span>
+          <div class="mini-meta">
+            <span>Stack</span>
+            <span>resend</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 5</span>
+      </div>
+
+      <h3>Editor Emoji Picker · Resend</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette mise à jour de Resend ajoute un picker d’emoji dans les édite éditeurs, ce qui est une fonctionnalité ergonomique mais non critique ni di directement liée aux produits ArchiFact ou SiteNote. Elle n’affecte pas la sécurité, la conformité ni les processus de paiement ou facturation.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible impact sur la productivité ou l’expérience utilisateur des p produits JD, sans conséquence technique ni réglementaire.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre l’évolution de l’outil React Email editor et ses extensio extensions pour évaluer si une fonctionnalité similaire pourrait être intég intégrée dans les outils internes de JD.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="480" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="480" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="480" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="480" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="480" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://resend.com/changelog/editor-emoji-picker" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:33.609017</span>
+      </div>
+    </article>
+    
+
     <article class="item watch-item" data-item-id="194">
       <div class="item-top">
         <div>
           <span class="source">Stripe Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>stripe</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -2294,7 +3417,7 @@
         <div>
           <span class="source">Supabase Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>supabase</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -2352,7 +3475,7 @@
         <div>
           <span class="source">Stripe Changelog</span>
           <div class="mini-meta">
-            <span>Stack technique</span>
+            <span>Stack</span>
             <span>stripe</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -2407,11 +3530,80 @@
       </div>
     
 
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>Lecture</h3>
+            <p>Informations de contexte sans action immédiate.</p>
+          </div>
+          <span class="badge ok">LECTURE · 1</span>
+        </div>
+
+        
+    <article class="item read-item" data-item-id="479">
+      <div class="item-top">
+        <div>
+          <span class="source">Supabase Changelog</span>
+          <div class="mini-meta">
+            <span>Stack</span>
+            <span>supabase</span>
+            <span>Priorité Critique</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 4</span>
+      </div>
+
+      <h3>Realtime Broadcast now supports binary payloads · Changelog</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette fonctionnalité permet d&#x27;optimiser la transmission de données binaires via Supabase Realtime, ce qui pourrait améliorer la performance et et réduire la charge sur les communications entre le backend et les clients clients, notamment pour des flux de données haute fréquence ou des images. Cela peut avoir un impact positif sur la productivité et l&#x27;expérience utili utilisateur dans les modules de suivi de chantier ou de gestion de document documents.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer et tester l&#x27;utilisation des payloads binaires dans les com communications Realtime pour les modules SiteNote (ex. : envoi d&#x27;images, do données capteurs).</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de la performance technique, réduction de la latence, potentiel gain de productivité dans les échanges de données en temps réel.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un ticket technique pour évaluer l’intégration des payload payloads binaires dans les modules SiteNote et réaliser un test pilote sur une fonctionnalité spécifique (ex. : envoi d’images).</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="479" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="479" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="479" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="479" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="479" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://supabase.com/changelog/46834-realtime-broadcast-now-supports-binary-payloads" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:15.667052</span>
+      </div>
+    </article>
+    
+      </div>
+    
 
     </section>
     
 
-    <section class="section">
+    <section class="section tab-content" data-tab="archifact">
       <div class="section-header">
         <div>
           <p class="section-kicker">Bloc de veille</p>
@@ -2731,7 +3923,7 @@
             <h3>À surveiller</h3>
             <p>Sujets utiles mais encore incertains.</p>
           </div>
-          <span class="badge watch">SURVEILLER · 14</span>
+          <span class="badge watch">SURVEILLER · 15</span>
         </div>
 
         
@@ -3373,6 +4565,64 @@
     </article>
     
 
+    <article class="item watch-item" data-item-id="470">
+      <div class="item-top">
+        <div>
+          <span class="source">Deltek Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>erp_metier</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>Your Most Critical Security Control Isn’t Technology — It’s Culture | Deltek</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;article traite de la culture comme contrôle de sécurité critique, critique, ce qui est intéressant pour la réflexion sur la sécurisation des processus internes, mais ne contient pas d&#x27;information spécifique ou immédi immédiate applicable à ArchiFact ou SiteNote.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible impact direct sur les produits ou la stack, mais pertinente pour une réflexion long terme sur la sécurité organisationnelle.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre les évolutions liées à la culture de sécurité dans les en entreprises du secteur de la construction et de l&#x27;ingénierie.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="470" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="470" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="470" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="470" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="470" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.deltek.com/en/blog/security-culture-human-risk-ownership" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:32.558876</span>
+      </div>
+    </article>
+    
+
     <article class="item watch-item" data-item-id="259">
       <div class="item-top">
         <div>
@@ -3555,10 +4805,68 @@
             <h3>Lecture</h3>
             <p>Informations de contexte sans action immédiate.</p>
           </div>
-          <span class="badge ok">LECTURE · 1</span>
+          <span class="badge ok">LECTURE · 4</span>
         </div>
 
         
+    <article class="item read-item" data-item-id="421">
+      <div class="item-top">
+        <div>
+          <span class="source">Monograph Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>erp_metier</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 4</span>
+      </div>
+
+      <h3>Why Architecture and Engineering Have the Most Untapped AI Potential of Any Industry - Monograph</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article présente une analyse générale sur le potentiel de l’IA dans l’architecture et l’ingénierie, sans contenu spécifique ou applicables applicables directement à ArchiFact ou SiteNote. Il s&#x27;agit plus d&#x27;une visio vision d&#x27;ensemble et d&#x27;inspiration que d’une information actionable.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible, principalement culturel ou inspirant pour la compréhension du marché</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Lecture de l’article pour enrichir la veille stratégique sur l’I l’IA dans le secteur de la construction et l’architecture</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="421" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="421" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="421" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="421" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="421" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://monograph.com/blog/ai-impact-architecture-engineering-firms" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:26.507951</span>
+      </div>
+    </article>
+    
+
     <article class="item read-item" data-item-id="228">
       <div class="item-top">
         <div>
@@ -3616,6 +4924,122 @@
       </div>
     </article>
     
+
+    <article class="item read-item" data-item-id="419">
+      <div class="item-top">
+        <div>
+          <span class="source">Monograph Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>erp_metier</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>A Working Architect&#x27;s Guide to AIA 2026 in San Diego - Monograph</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article est une landing page promotionnelle liée à une conféren conférence (AIA 2026) et propose des contenus généraux sur la gestion de pr projet, l’optimisation budgétaire et les benchmarks salariaux. Il ne contie contient aucune information spécifique ou urgente applicables à ArchiFact o ou SiteNote, ni aucun changement réglementaire, technique ou commercial dir direct.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact direct sur les produits, la stack ou les coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Archiver dans une liste de veille culturelle ou marketing non pr prioritaire.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="419" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="419" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="419" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="419" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="419" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://monograph.com/blog/a-working-architects-guide-to-aia-2026-in-san-diego" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:25.583367</span>
+      </div>
+    </article>
+    
+
+    <article class="item read-item" data-item-id="422">
+      <div class="item-top">
+        <div>
+          <span class="source">Monograph Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>erp_metier</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>The Guide to Time Tracking for Architects - Monograph</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article présente un contenu générique sur la gestion du temps p pour les architectes, sans information spécifique ni impact direct sur Arch ArchiFact ou SiteNote. Il s&#x27;agit d&#x27;une ressource marketing orientée vers un une plateforme (Monograph) et non appliquable immédiatement.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact sur les produits, la stack ou les coûts</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Archiver dans la veille culturelle ou inspiration marché</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="422" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="422" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="422" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="422" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="422" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://monograph.com/blog/the-guide-to-time-tracking-for-architects" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:27.302467</span>
+      </div>
+    </article>
+    
       </div>
     
 
@@ -3625,7 +5049,7 @@
             <h3>Archives</h3>
             <p>Bruit filtré ou éléments peu utiles actuellement.</p>
           </div>
-          <span class="badge ignore">ARCHIVE · 3</span>
+          <span class="badge ignore">ARCHIVE · 5</span>
         </div>
 
         
@@ -3802,20 +5226,135 @@
       </div>
     </article>
     
+
+    <article class="item ignore-item" data-item-id="452">
+      <div class="item-top">
+        <div>
+          <span class="source">Pennylane Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>gestion_financiere</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision ignore">ARCHIVE · score 2</span>
+      </div>
+
+      <h3>Pennylane se lance dans l&#x27;agriculture en partenariat avec le groupe COGEDIS | Pennylane</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article présente un partenariat de Pennylane avec le groupe COG COGEDIS dans le secteur agricole. Il s&#x27;agit d&#x27;une annonce de produit généra généralisée, sans impact direct sur ArchiFact ou SiteNote, ni sur la stack technique ou les coûts de JD.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact sur ArchiFact, SiteNote, la stack ou les coûts</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Aucune</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="452" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="452" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="452" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="452" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="452" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.pennylane.com/fr/blog/produit/lancement-agricole" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:30.613872</span>
+      </div>
+    </article>
+    
+
+    <article class="item ignore-item" data-item-id="464">
+      <div class="item-top">
+        <div>
+          <span class="source">Pennylane Blog</span>
+          <div class="mini-meta">
+            <span>ArchiFact</span>
+            <span>gestion_financiere</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision ignore">ARCHIVE · score 2</span>
+      </div>
+
+      <h3>Fondations agricoles : 4 nouveautés Pennylane pour vos dossiers | Pennylane</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article est une page produit de Pennylane présentant des nouvea nouveautés spécifiques à la comptabilité agricole. Il ne contient aucune in information applicable directement à ArchiFact ou SiteNote, ni aucun impact impact immédiat sur les processus de JD, les coûts ou la conformité régleme réglementaire. C’est du contenu marketing générique.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact sur ArchiFact, SiteNote, la stack ou les coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Ne pas suivre cette source pour l’instant, continuer à surveille surveiller les actualités réglementaires ou techniques liées à nos produits produits.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="464" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="464" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="464" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="464" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="464" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://www.pennylane.com/fr/blog/produit/comptabilité-agricole-fondations" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:31.626692</span>
+      </div>
+    </article>
+    
       </div>
     
     </section>
     
 
-
-    <section class="section">
+    <section class="section tab-content" data-tab="sitenote">
       <div class="section-header">
         <div>
           <p class="section-kicker">Bloc de veille</p>
-          <h2>IA automatisation SaaS</h2>
-          <p class="section-intro">Automatisations IA applicables à tes produits SaaS, aux workflows métier et à la productivité.</p>
+          <h2>SiteNote</h2>
+          <p class="section-intro">Signaux utiles pour SiteNote : suivi de chantier, réserves, OPR, terrain, CR, mobilité et ergonomie métier.</p>
         </div>
-        <span class="badge ok">28 signal(s)</span>
+        <span class="badge ok">23 signal(s)</span>
       </div>
 
       
@@ -3826,7 +5365,221 @@
             <h3>À tester</h3>
             <p>Nouveautés à expérimenter sans engagement lourd.</p>
           </div>
-          <span class="badge watch">TESTER · 6</span>
+          <span class="badge watch">TESTER · 2</span>
+        </div>
+
+        
+    <article class="item test-item" data-item-id="376">
+      <div class="item-top">
+        <div>
+          <span class="source">Archipad Blog</span>
+          <div class="mini-meta">
+            <span>SiteNote</span>
+            <span>concurrence</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Digitalisation de documents et gestion des plans - Archipad</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette source présente une fonctionnalité concrète (digitalisation d de documents, gestion des plans, synchronisation via Dropbox/Google Drive) qui pourrait enrichir les modules de SiteNote, notamment en matière de gest gestion des plans et partage de documents. Cependant, il s&#x27;agit d&#x27;une fonct fonctionnalité déjà existante dans le marché et non urgente ni critique pou pour la production.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer une analyse comparative de cette fonctionnalité par rappor rapport aux modules actuels de SiteNote (plans, documents).</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Potentiellement amélioration UX et productivité, mais pas impact di direct sur ArchiFact.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Comparer les fonctionnalités de digitalisation de Archipad avec les modules existants de SiteNote pour identifier des opportunités d’ajout ou d’amélioration.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="376" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="376" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="376" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="376" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="376" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://archipad.com/fr/fonctionnalites/digitalisation-de-documents-et-gestion-des-plans/" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:17.868293</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="377">
+      <div class="item-top">
+        <div>
+          <span class="source">Archipad Blog</span>
+          <div class="mini-meta">
+            <span>SiteNote</span>
+            <span>concurrence</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Multi-photos, commentaires, dessins/croquis - Archipad</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette fonctionnalité (multi-photos, commentaires, dessins/croquis) est concrète et potentiellement utile pour améliorer l&#x27;expérience utilisate utilisateur de SiteNote, notamment dans le suivi de chantier et les remarqu remarques terrain. Elle n’est pas urgente ni critique, mais pourrait apport apporter une valeur ajoutée significative.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer cette fonctionnalité dans un prototype ou une roadmap de d développement pour SiteNote</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de l’expérience utilisateur, potentiellement une augme augmentation de la productivité et de la qualité des données dans SiteNote</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un cahier des charges technique pour l’intégration de cett cette fonctionnalité dans SiteNote en 2 semaines</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="377" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="377" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="377" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="377" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="377" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://archipad.com/fr/fonctionnalites/multi-photos-commentaires-dessins-croquis/" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:18.946368</span>
+      </div>
+    </article>
+    
+      </div>
+    
+
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>À surveiller</h3>
+            <p>Sujets utiles mais encore incertains.</p>
+          </div>
+          <span class="badge watch">SURVEILLER · 1</span>
+        </div>
+
+        
+    <article class="item watch-item" data-item-id="375">
+      <div class="item-top">
+        <div>
+          <span class="source">Archipad Blog</span>
+          <div class="mini-meta">
+            <span>SiteNote</span>
+            <span>concurrence</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>OPR, gestion d’observations, levée de réserves - Archipad</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette source présente des fonctionnalités similaires à celles de Si SiteNote (OPR, réserves, observations), mais il s&#x27;agit d&#x27;une page produit d d&#x27;un concurrent. Aucune action immédiate n&#x27;est requise, car ces fonctionnal fonctionnalités ne sont pas encore implémentées dans ArchiFact ou SiteNote, SiteNote, et l&#x27;impact sur le produit est incertain.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible impact sur les fonctionnalités actuelles de SiteNote, mais p potentiel d&#x27;inspiration pour l&#x27;évolution du produit.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre régulièrement les mises à jour de Archipad pour évaluer u un éventuel impact dans 3 à 6 mois.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="375" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="375" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="375" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="375" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="375" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://archipad.com/fr/fonctionnalites/opr-gestion-dobservations-levee-de-reserves/" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:16.725614</span>
+      </div>
+    </article>
+    
+      </div>
+    
+
+
+    </section>
+    
+
+    <section class="section tab-content" data-tab="ia_automatisation_saas">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Bloc de veille</p>
+          <h2>IA SaaS</h2>
+          <p class="section-intro">Automatisations IA applicables à tes produits SaaS, aux workflows métier et à la productivité.</p>
+        </div>
+        <span class="badge ok">31 signal(s)</span>
+      </div>
+
+      
+
+      <div class="decision-group">
+        <div class="decision-group-header">
+          <div>
+            <h3>À tester</h3>
+            <p>Nouveautés à expérimenter sans engagement lourd.</p>
+          </div>
+          <span class="badge watch">TESTER · 10</span>
         </div>
 
         
@@ -3835,7 +5588,7 @@
         <div>
           <span class="source">Cursor Blog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -3893,7 +5646,7 @@
         <div>
           <span class="source">Cursor Blog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -3951,7 +5704,7 @@
         <div>
           <span class="source">Cursor Blog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4009,7 +5762,7 @@
         <div>
           <span class="source">OpenAI API Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4067,7 +5820,7 @@
         <div>
           <span class="source">Cursor Blog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4125,7 +5878,7 @@
         <div>
           <span class="source">Cursor Blog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4177,6 +5930,238 @@
       </div>
     </article>
     
+
+    <article class="item test-item" data-item-id="401">
+      <div class="item-top">
+        <div>
+          <span class="source">OpenAI API Changelog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Using skills to accelerate OSS maintenance | OpenAI Developers</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;utilisation des &quot;skills&quot; pour accélérer la maintenance de logicie logiciels open-source pourrait améliorer l&#x27;automatisation du développement, développement, notamment dans le cadre de l’IA locale. Cela correspond à un un potentiel d&#x27;amélioration de la productivité et de l’efficacité du dévelo développement interne, sans impact immédiat sur la production.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer une exploration rapide des outils de &quot;skills&quot; OpenAI dans le pipeline de développement local pour automatiser certaines tâches récurr récurrentes liées à la maintenance OSS.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de la productivité du dev, potentiel gain de temps sur sur les tâches techniques, impact indirect sur la réduction de la dette tec technique.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un petit prototype d&#x27;intégration de &quot;skills&quot; dans le proce processus de maintenance des outils IA locaux (ex: Ollama, Qwen3) pour éval évaluer leur efficacité.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="401" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="401" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="401" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="401" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="401" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://developers.openai.com/blog/skills-agents-sdk" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:20.262091</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="402">
+      <div class="item-top">
+        <div>
+          <span class="source">OpenAI API Changelog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Building frontend UIs with Codex and Figma | OpenAI Developers</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;utilisation de Codex et Figma pour construire des interfaces fron frontend représente une opportunité d&#x27;automatiser ou d&#x27;accélérer le dévelop développement UI, ce qui peut améliorer la productivité du dev et l&#x27;expérie l&#x27;expérience utilisateur dans les produits ArchiFact et SiteNote. Cependant Cependant, ce n’est pas urgent ni critique pour la production.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer une preuve de concept avec Codex + Figma pour créer un com composant UI réutilisable dans un module de l’interface.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de la productivité du développement, potentiel gain de de temps sur les interfaces, impact positif sur l&#x27;UX et l’automatisation.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un petit prototype UI avec Codex et Figma pour valider l’e l’efficacité dans un cas concret de l’outil ArchiFact.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="402" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="402" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="402" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="402" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="402" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://developers.openai.com/blog/building-frontend-uis-with-codex-and-figma" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:21.489828</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="405">
+      <div class="item-top">
+        <div>
+          <span class="source">Cursor Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Direct agents with visual prompts in Design Mode · Cursor</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette fonctionnalité de Cursor permet d&#x27;améliorer l&#x27;interaction ent entre les agents IA et les interfaces visuelles, ce qui pourrait optimiser le développement de l’IA locale dans les outils de JD. Cela peut améliorer la productivité des développeurs et l&#x27;automatisation des tâches répétitives répétitives liées au code, sans impact immédiat sur la production.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer Cursor dans un prototype de workflow d&#x27;automatisation IA l locale pour tester son efficacité sur les tâches de développement logiciel. logiciel.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de l’efficacité du développement, potentiel gain de te temps et réduction de la dette technique.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Installer Cursor en version beta dans un environnement de test l local et créer un scénario d’utilisation avec l’IA locale (Ollama/Qwen3).</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="405" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="405" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="405" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="405" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="405" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://cursor.com/blog/design-mode" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:24.604695</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="481">
+      <div class="item-top">
+        <div>
+          <span class="source">Cursor Blog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 7</span>
+      </div>
+
+      <h3>Build programmatic agents with the Cursor SDK · Cursor</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L&#x27;introduction du Cursor SDK ouvre des possibilités d&#x27;automatisatio d&#x27;automatisation avancée via des agents programmatiques, ce qui peut amélio améliorer la productivité et l&#x27;efficacité de développement. Cela correspond correspond à l&#x27;objectif de développer une IA locale et automatiser les tâch tâches récurrentes. Bien que ce ne soit pas urgent ni critique, cela représ représente un potentiel gain de temps et d’efficacité pour le dev et l’auto l’automatisation interne.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer le SDK Cursor dans un prototype d&#x27;agent pour automatiser u une tâche récurrente (ex : génération de documentation ou traitement de fic fichiers).</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de la productivité, potentiel gain de temps sur les tâ tâches répétitives, renforcement de l’IA locale.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Créer un petit prototype d&#x27;agent avec le Cursor SDK pour tester son utilisation dans un contexte de développement interne.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="481" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="481" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="481" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="481" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="481" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://cursor.com/blog/typescript-sdk" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:34.942157</span>
+      </div>
+    </article>
+    
       </div>
     
 
@@ -4186,7 +6171,7 @@
             <h3>À surveiller</h3>
             <p>Sujets utiles mais encore incertains.</p>
           </div>
-          <span class="badge watch">SURVEILLER · 11</span>
+          <span class="badge watch">SURVEILLER · 12</span>
         </div>
 
         
@@ -4195,7 +6180,7 @@
         <div>
           <span class="source">Claude Code Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4253,7 +6238,7 @@
         <div>
           <span class="source">Claude Code Releases</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4311,7 +6296,7 @@
         <div>
           <span class="source">Cursor Blog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4369,7 +6354,7 @@
         <div>
           <span class="source">OpenAI API Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4427,7 +6412,7 @@
         <div>
           <span class="source">OpenAI API Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4485,7 +6470,7 @@
         <div>
           <span class="source">OpenAI API Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4543,7 +6528,7 @@
         <div>
           <span class="source">OpenAI API Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4601,7 +6586,7 @@
         <div>
           <span class="source">Claude Code Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4659,7 +6644,7 @@
         <div>
           <span class="source">Claude Code Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4717,7 +6702,7 @@
         <div>
           <span class="source">Claude Code Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4775,7 +6760,7 @@
         <div>
           <span class="source">Claude Code Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4827,6 +6812,64 @@
       </div>
     </article>
     
+
+    <article class="item watch-item" data-item-id="404">
+      <div class="item-top">
+        <div>
+          <span class="source">OpenAI API Changelog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision watch">SURVEILLER · score 6</span>
+      </div>
+
+      <h3>From prompts to products: One year of Responses | OpenAI Developers</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>L’article présente une évolution des capacités d’OpenAI, notamment autour des réponses, du caching et de l’orchestration, mais sans impact dir direct ou immédiat sur les produits ArchiFact ou SiteNote. Il s&#x27;agit d&#x27;une mise à jour générale sur les outils d’IA, pas d’une fonctionnalité spécifiq spécifique applicable à JD.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Faible impact sur les fonctionnalités actuelles de JD, potentiellem potentiellement utile dans le futur pour enrichir l’IA locale, mais non pri prioritaire.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Suivre l’évolution des APIs OpenAI sur un plan trimestriel, sans sans action immédiate.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="404" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="404" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="404" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="404" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="404" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://developers.openai.com/blog/one-year-of-responses" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:23.412588</span>
+      </div>
+    </article>
+    
       </div>
     
 
@@ -4836,7 +6879,7 @@
             <h3>Lecture</h3>
             <p>Informations de contexte sans action immédiate.</p>
           </div>
-          <span class="badge ok">LECTURE · 1</span>
+          <span class="badge ok">LECTURE · 2</span>
         </div>
 
         
@@ -4845,7 +6888,7 @@
         <div>
           <span class="source">OpenAI API Changelog</span>
           <div class="mini-meta">
-            <span>IA automatisation SaaS</span>
+            <span>IA SaaS</span>
             <span>developpement</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4897,6 +6940,64 @@
       </div>
     </article>
     
+
+    <article class="item read-item" data-item-id="403">
+      <div class="item-top">
+        <div>
+          <span class="source">OpenAI API Changelog</span>
+          <div class="mini-meta">
+            <span>IA SaaS</span>
+            <span>developpement</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision read">LECTURE · score 3</span>
+      </div>
+
+      <h3>How Perplexity Brought Voice Search to Millions Using the Realtime API | OpenAI Developers</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cet article présente une utilisation de l’API OpenAI par Perplexity Perplexity pour le voice search, sans impact direct sur les produits ArchiF ArchiFact ou SiteNote, ni sur la stack technique de JD. Il s&#x27;agit d&#x27;une lec lecture d&#x27;inspiration technologique plutôt que d&#x27;une opportunité ou menace concrète.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Aucune</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Aucun impact direct sur ArchiFact, SiteNote, la stack ou les coûts. coûts.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Aucune étape concrète nécessaire.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="403" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="403" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="403" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="403" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="403" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://developers.openai.com/blog/realtime-perplexity-computer" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:22.362006</span>
+      </div>
+    </article>
+    
       </div>
     
 
@@ -4906,14 +7007,14 @@
 
 
 
-    <section class="section">
+    <section class="section tab-content" data-tab="ia_ecosysteme">
       <div class="section-header">
         <div>
           <p class="section-kicker">Bloc de veille</p>
-          <h2>Ia Ecosysteme</h2>
-          <p class="section-intro">Sources classées dans ce bloc de veille.</p>
+          <h2>IA locale</h2>
+          <p class="section-intro">Évolutions de l’IA locale, des modèles open source, de l’infrastructure et des usages hors cloud.</p>
         </div>
-        <span class="badge ok">29 signal(s)</span>
+        <span class="badge ok">31 signal(s)</span>
       </div>
 
       
@@ -4932,7 +7033,7 @@
         <div>
           <span class="source">Mistral Changelog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>modeles</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -4993,7 +7094,7 @@
             <h3>À tester</h3>
             <p>Nouveautés à expérimenter sans engagement lourd.</p>
           </div>
-          <span class="badge watch">TESTER · 12</span>
+          <span class="badge watch">TESTER · 14</span>
         </div>
 
         
@@ -5002,7 +7103,7 @@
         <div>
           <span class="source">Ollama Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -5060,7 +7161,7 @@
         <div>
           <span class="source">Ollama GitHub Releases</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5118,7 +7219,7 @@
         <div>
           <span class="source">Ollama Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -5176,7 +7277,7 @@
         <div>
           <span class="source">Ollama Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -5234,7 +7335,7 @@
         <div>
           <span class="source">Ollama Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -5292,7 +7393,7 @@
         <div>
           <span class="source">LM Studio Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5350,7 +7451,7 @@
         <div>
           <span class="source">LM Studio Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5403,12 +7504,128 @@
     </article>
     
 
+    <article class="item test-item" data-item-id="447">
+      <div class="item-top">
+        <div>
+          <span class="source">LM Studio Blog</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>local_ai</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 8</span>
+      </div>
+
+      <h3>Run open models on NVIDIA DGX Station GB300 | LM Studio Blog | LM Studio</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette actualité présente une opportunité concrète d&#x27;amélioration de de l&#x27;IA locale avec un matériel dédié (NVIDIA DGX Station GB300) et des out outils comme LM Link pour un déploiement sécurisé à distance. Cela peut amé améliorer la performance, la sécurité et l’accessibilité des modèles locaux locaux, en lien direct avec les objectifs de JD.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Tester l&#x27;installation de llmster sur un matériel compatible (ex. RT RTX 4090 ou DGX) et évaluer l’intégration dans le workflow local IA.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration de l’IA locale, réduction de la dépendance au cloud, p potentiel gain de productivité et sécurité renforcée pour les développement développements IA internes.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Installer llmster sur un poste de développement local et tester le déploiement d’un modèle open-source avec LM Studio.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="447" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="447" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="447" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="447" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="447" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://lmstudio.ai/blog/dgx-station" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:28.589944</span>
+      </div>
+    </article>
+    
+
+    <article class="item test-item" data-item-id="448">
+      <div class="item-top">
+        <div>
+          <span class="source">LM Studio Blog</span>
+          <div class="mini-meta">
+            <span>IA locale</span>
+            <span>local_ai</span>
+            <span>Priorité Haute</span>
+            <span>Statut Nouveau</span>
+          </div>
+        </div>
+        <span class="decision test">TESTER · score 8</span>
+      </div>
+
+      <h3>Use your LM Studio Models in Claude Code | LM Studio Blog | LM Studio</h3>
+
+      <div class="analysis-grid">
+        
+      <div class="analysis-card reason">
+        <span>Pourquoi c’est important</span>
+        <p>Cette actualité présente une fonctionnalité concrète et exploitable exploitable pour intégrer les modèles locaux LM Studio dans un environnemen environnement de développement (Claude Code), ce qui peut améliorer l&#x27;IA lo locale pour JD, notamment dans le cadre de ses objectifs de réduction de de dette technique et d&#x27;automatisation.</p>
+      </div>
+    
+        
+      <div class="analysis-card action-box">
+        <span>Action recommandée</span>
+        <p>Intégrer et tester l’endpoint Anthropic-compatible de LM Studio ave avec Claude Code pour évaluer l’utilité sur des tâches spécifiques comme l’ l’analyse de documents ou la génération de contenu.</p>
+      </div>
+    
+        
+      <div class="analysis-card impact">
+        <span>Impact potentiel</span>
+        <p>Amélioration potentielle de l’IA locale, réduction de la dépendance dépendance à des APIs externes, gain de productivité dans le dev.</p>
+      </div>
+    
+        
+      <div class="analysis-card next">
+        <span>Prochaine étape</span>
+        <p>Installer LM Studio 0.4.1 et configurer l’environnement local po pour tester une première utilisation avec Claude Code sur un modèle local.</p>
+      </div>
+    
+      </div>
+
+      <div class="card-actions">
+        <button data-id="448" data-status="viewed" data-feedback="relevant">Lu</button>
+        <button data-id="448" data-status="in_progress" data-feedback="tested">À tester</button>
+        <button data-id="448" data-status="archived" data-feedback="not_relevant">Pas pertinent</button>
+        <button data-id="448" data-status="done" data-feedback="implemented">Traité</button>
+        <button data-id="448" data-status="archived" data-feedback="archived">Archiver</button>
+      </div>
+
+      <div class="item-footer">
+        <a class="source-link" href="https://lmstudio.ai/blog/claudecode" target="_blank" rel="noopener noreferrer">Ouvrir la source</a>
+        <span class="analyzed-at">Analysé : 2026-06-13T12:55:29.828084</span>
+      </div>
+    </article>
+    
+
     <article class="item test-item" data-item-id="209">
       <div class="item-top">
         <div>
           <span class="source">LM Studio Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5466,7 +7683,7 @@
         <div>
           <span class="source">llama.cpp Releases</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5524,7 +7741,7 @@
         <div>
           <span class="source">Ollama Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Critique</span>
             <span>Statut Nouveau</span>
@@ -5582,7 +7799,7 @@
         <div>
           <span class="source">LM Studio Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5640,7 +7857,7 @@
         <div>
           <span class="source">LM Studio Blog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>local_ai</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5710,7 +7927,7 @@
         <div>
           <span class="source">Mistral Changelog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>modeles</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5768,7 +7985,7 @@
         <div>
           <span class="source">Mistral Changelog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>modeles</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5826,7 +8043,7 @@
         <div>
           <span class="source">Mistral Changelog</span>
           <div class="mini-meta">
-            <span>Ia Ecosysteme</span>
+            <span>IA locale</span>
             <span>modeles</span>
             <span>Priorité Haute</span>
             <span>Statut Nouveau</span>
@@ -5914,9 +8131,9 @@
           <p class="section-kicker">Indicateurs</p>
           <h2>Vue rapide</h2>
           <ul class="priority-list">
-            <li><span class="rank">A</span><span>Score moyen : <strong>6.6/10</strong></span></li>
-            <li><span class="rank">B</span><span>Lecture : <strong>2</strong> item(s)</span></li>
-            <li><span class="rank">C</span><span>Total analysé : <strong>188</strong> item(s)</span></li>
+            <li><span class="rank">A</span><span>Score moyen : <strong>6.4/10</strong></span></li>
+            <li><span class="rank">B</span><span>Lecture : <strong>7</strong> item(s)</span></li>
+            <li><span class="rank">C</span><span>Total analysé : <strong>201</strong> item(s)</span></li>
           </ul>
         </section>
 
@@ -5937,6 +8154,28 @@
 
   </main>
     <script>
+    document.querySelectorAll(".tab-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = button.dataset.target;
+
+        document.querySelectorAll(".tab-btn").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        document.querySelectorAll(".tab-content").forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const activeSection = document.querySelector(`.tab-content[data-tab="${target}"]`);
+        if (activeSection) {
+          activeSection.classList.add("active");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
+    });
+
     document.querySelectorAll(".card-actions button").forEach((button) => {
       button.addEventListener("click", async () => {
         const id = button.dataset.id;
