@@ -15,7 +15,7 @@ BLOCK_ORDER = [
     "archifact",
     "sitenote",
     "ia_automatisation_saas",
-    "ia_cosysteme",
+    "ia_ecosysteme",
     "business_saas",
     "signaux_faibles",
 ]
@@ -635,8 +635,8 @@ def main():
       position: sticky;
       top: 0;
       z-index: 20;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 10px;
       padding: 12px;
       margin: 0 0 24px;
@@ -645,14 +645,14 @@ def main():
       border: 1px solid var(--line);
       box-shadow: 0 12px 28px rgba(31,36,48,0.05);
       backdrop-filter: blur(14px);
-      overflow: hidden;
+      overflow: visible;
     }}
 
     .tab-btn {{
-      flex: 0 0 auto;
+      width: 100%;
       border: 0;
       cursor: pointer;
-      padding: 10px 14px;
+      padding: 10px 12px;
       border-radius: 999px;
       background: #ffffff;
       border: 1px solid #e4e7f0;
@@ -660,6 +660,7 @@ def main():
       font-size: 13px;
       font-weight: 850;
       white-space: nowrap;
+      text-align: center;
     }}
 
     .tab-btn span {{
