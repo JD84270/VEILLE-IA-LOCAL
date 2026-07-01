@@ -1,6 +1,8 @@
 import re
 import sqlite3
 import subprocess
+import os
+import time
 import yaml
 from pathlib import Path
 from datetime import datetime
@@ -136,23 +138,45 @@ Contenu :
 {summary[:SUMMARY_LIMIT]}
 """
 
+    process = subprocess.Popen(
+        ["ollama", "run", OLLAMA_MODEL],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        encoding="utf-8",
+        errors="ignore",
+    )
+
     try:
-        result = subprocess.run(
-            ["ollama", "run", OLLAMA_MODEL],
+        stdout, stderr = process.communicate(
             input=prompt,
-            text=True,
-            capture_output=True,
-            encoding="utf-8",
-            errors="ignore",
             timeout=OLLAMA_TIMEOUT
         )
     except subprocess.TimeoutExpired:
-        raise RuntimeError(f"Timeout Ollama après {OLLAMA_TIMEOUT} secondes")
+        if process.poll() is None:
+            if os.name == "nt":
+                subprocess.run(
+                    ["taskkill", "/PID", str(process.pid), "/T", "/F"],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL
+                )
+            else:
+                process.kill()
+        process.communicate()
+        raise RuntimeError(
+            f"Timeout Ollama apres {OLLAMA_TIMEOUT} secondes pour l'item {item_id}"
+        )
 
-    if result.returncode != 0:
-        raise RuntimeError(result.stderr)
+    if process.returncode != 0:
+        stderr_clean = sanitize_text(stderr)
+        if not stderr_clean:
+            stderr_clean = "Aucun message stderr"
+        raise RuntimeError(
+            f"Ollama a echoue avec returncode={process.returncode} : {stderr_clean}"
+        )
 
-    return result.stdout.strip()
+    return stdout.strip()
 
 
 def extract_field(response, field_name):
@@ -403,10 +427,14 @@ def mark_error(item_id, error_message):
 
 
 def main():
+    start_time = time.monotonic()
+    analyzed_count = 0
+    error_count = 0
+
     items = get_items_to_analyze(limit=ANALYZE_LIMIT)
 
     if not items:
-        print("Aucun item à analyser.")
+        print("Aucun item à analyser.", flush=True)
         return
 
     for item in items:
@@ -414,27 +442,36 @@ def main():
         source_name = item[1]
         priority = item[4]
 
-        print(f"Analyse item {item_id} - {source_name} [{priority}]")
+        print(f"Analyse item {item_id} - {source_name} [{priority}]", flush=True)
 
         try:
             response = ask_ollama(item)
             analysis = parse_response(response)
             analysis = post_filter(item, analysis)
             update_item(item_id, analysis)
+            analyzed_count += 1
 
-            print(f"Décision : {analysis['decision']}")
-            print(f"Score    : {analysis['score']}")
-            print(f"Raison   : {analysis['reason']}")
-            print(f"Action   : {analysis['recommended_action']}")
-            print(f"Impact   : {analysis['impact']}")
-            print(f"Next     : {analysis['next_step']}")
-            print("-" * 80)
+            print(f"Décision : {analysis['decision']}", flush=True)
+            print(f"Score    : {analysis['score']}", flush=True)
+            print(f"Raison   : {analysis['reason']}", flush=True)
+            print(f"Action   : {analysis['recommended_action']}", flush=True)
+            print(f"Impact   : {analysis['impact']}", flush=True)
+            print(f"Next     : {analysis['next_step']}", flush=True)
+            print("-" * 80, flush=True)
 
         except Exception as error:
             mark_error(item_id, error)
-            print(f"ERREUR analyse item {item_id} : {error}")
-            print("Item marqué en status = error")
-            print("-" * 80)
+            error_count += 1
+            print(f"ERREUR analyse item {item_id} : {error}", flush=True)
+            print("Item marqué en status = error", flush=True)
+            print("-" * 80, flush=True)
+
+    duration = time.monotonic() - start_time
+    print(
+        f"Résumé analyse : {analyzed_count} analysé(s), "
+        f"{error_count} erreur(s), durée {duration:.1f}s",
+        flush=True
+    )
 
 
 if __name__ == "__main__":
